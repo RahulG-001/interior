@@ -28,7 +28,7 @@ AOS.init({
 });
 
 createInertiaApp({
-    title: title => title ? `${title} | Velzon Inertia + Vue & Laravel Admin & Dashboard Template` : 'Velzon - Inertia + Vue & Laravel Admin & Dashboard Template',
+    title: title => title ? `${title} | Interior AI` : 'Interior AI',
     resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
     setup({ el, App, props, plugin }) {
         return createApp({ render: () => h(App, props) })
