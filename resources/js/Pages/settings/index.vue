@@ -16,6 +16,22 @@
       </div>
     </div>
 
+    <div class="credits-section">
+      <h2>AI Usage Statistics</h2>
+      <div class="credits-grid">
+        <div class="credit-card">
+          <h4>Total Cost</h4>
+          <p class="cost">${{ credits.total_cost || '0.00' }}</p>
+          <span>{{ credits.total_generations || 0 }} generations</span>
+        </div>
+        <div class="credit-card">
+          <h4>Today's Usage</h4>
+          <p class="cost">${{ credits.today_cost || '0.00' }}</p>
+          <span>{{ credits.today_generations || 0 }} generations</span>
+        </div>
+      </div>
+    </div>
+
     <div class="settings-actions">
       <button @click="savePrompts" :disabled="isSaving" class="save-btn">
         {{ isSaving ? 'Saving...' : 'Save Prompts' }}
@@ -34,6 +50,7 @@ export default {
   data() {
     return {
       isSaving: false,
+      credits: {},
       roomTypes: ['bedroom', 'living-room', 'kitchen', 'dining-room'],
       prompts: {
         'bedroom': this.prompts?.bedroom?.prompt || 'Transform this bedroom into a {roomStyle} style. Keep the room layout but redesign with {roomStyle} furniture, colors, and decor elements suitable for a comfortable sleeping space.',
@@ -42,6 +59,9 @@ export default {
         'dining-room': this.prompts?.['dining-room']?.prompt || 'Transform this dining room into a {roomStyle} style. Keep the room layout but redesign with {roomStyle} furniture, colors, and decor elements suitable for dining and entertaining.'
       }
     }
+  },
+  mounted() {
+    this.loadCredits();
   },
   methods: {
     async savePrompts() {
@@ -79,6 +99,14 @@ export default {
         'kitchen': 'Transform this kitchen into a {roomStyle} style. Keep the room layout but redesign with {roomStyle} furniture, colors, and decor elements suitable for cooking and dining.',
         'dining-room': 'Transform this dining room into a {roomStyle} style. Keep the room layout but redesign with {roomStyle} furniture, colors, and decor elements suitable for dining and entertaining.'
       };
+    },
+    async loadCredits() {
+      try {
+        const response = await fetch('/api/credits');
+        this.credits = await response.json();
+      } catch (error) {
+        console.error('Failed to load credits:', error);
+      }
     }
   }
 }
@@ -182,5 +210,47 @@ export default {
 
 .reset-btn:hover {
   background: #4b5563;
+}
+
+.credits-section {
+  margin-bottom: 40px;
+}
+
+.credits-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.credits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.credit-card {
+  background: #252836;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #3a3d4a;
+}
+
+.credit-card h4 {
+  margin: 0 0 10px 0;
+  color: #8b8d97;
+  font-size: 14px;
+}
+
+.credit-card .cost {
+  font-size: 24px;
+  font-weight: bold;
+  color: #84cc16;
+  margin: 0 0 5px 0;
+}
+
+.credit-card span {
+  color: #8b8d97;
+  font-size: 12px;
 }
 </style>

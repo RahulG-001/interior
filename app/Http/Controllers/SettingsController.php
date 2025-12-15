@@ -31,4 +31,19 @@ class SettingsController extends Controller
 
         return response()->json(['success' => true]);
     }
+
+    public function getCredits()
+    {
+        $totalCost = \App\Models\AiCredit::sum('cost');
+        $totalGenerations = \App\Models\AiCredit::count();
+        $todayCost = \App\Models\AiCredit::whereDate('created_at', today())->sum('cost');
+        $todayGenerations = \App\Models\AiCredit::whereDate('created_at', today())->count();
+        
+        return response()->json([
+            'total_cost' => $totalCost,
+            'total_generations' => $totalGenerations,
+            'today_cost' => $todayCost,
+            'today_generations' => $todayGenerations
+        ]);
+    }
 }
