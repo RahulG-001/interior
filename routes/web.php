@@ -19,6 +19,7 @@ Route::get('/design', [VelzonRoutesController::class, 'design']);
 Route::get('/settings', [App\Http\Controllers\SettingsController::class, 'index']);
 Route::post('/api/generate-design', [App\Http\Controllers\DesignController::class, 'generateDesign']);
 Route::post('/api/update-prompts', [App\Http\Controllers\SettingsController::class, 'updatePrompts']);
+Route::get('/api/credits', [App\Http\Controllers\SettingsController::class, 'getCredits']);
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     

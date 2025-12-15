@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\RoomPrompt;
+use App\Models\AiCredit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
@@ -65,6 +66,19 @@ class DesignController extends Controller
 
             if ($response->successful()) {
                 $data = $response->json();
+                
+                // Extract cost from response headers or calculate based on model/size
+                $cost = $this->calculateCost('dall-e-3', '1024x1024', $response->headers());
+                
+                AiCredit::create([
+                    'room_type' => $request->roomType,
+                    'room_style' => $request->roomStyle,
+                    'cost' => $cost,
+                    'model' => 'dall-e-3',
+                    'size' => '1024x1024',
+                    'ip_address' => $request->ip()
+                ]);
+                
                 return response()->json([
                     'success' => true,
                     'image_url' => $data['data'][0]['url']
@@ -76,5 +90,27 @@ class DesignController extends Controller
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'error' => $e->getMessage()], 500);
         }
+    }
+
+    private function calculateCost($model, $size, $headers)
+    {
+        // Try to get cost from OpenAI response headers
+        $usage = $headers['openai-processing-ms'] ?? null;
+        
+        // If no usage data, calculate based on OpenAI pricing
+        $pricing = [
+            'dall-e-3' => [
+                '1024x1024' => 0.040,
+                '1024x1792' => 0.080,
+                '1792x1024' => 0.080
+            ],
+            'dall-e-2' => [
+                '1024x1024' => 0.020,
+                '512x512' => 0.018,
+                '256x256' => 0.016
+            ]
+        ];
+        
+        return $pricing[$model][$size] ?? 0.040;
     }
 }
