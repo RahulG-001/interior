@@ -36,8 +36,19 @@
         </select>
       </div>
 
-      <!-- Room Style Grid -->
-      <div class="room-styles">
+      <!-- Kitchen Style Selection (only for kitchen) -->
+      <div v-if="selectedRoomType === 'kitchen'" class="kitchen-styles">
+        <label>Kitchen Style</label>
+        <select v-model="selectedKitchenStyle" class="room-dropdown">
+          <option value="">Select Kitchen Style</option>
+          <option v-for="(style, key) in kitchenStyles" :key="key" :value="key">
+            {{ style.name }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Room Style Grid (for non-kitchen rooms) -->
+      <div v-else class="room-styles">
         <label>Room Style</label>
         <div class="styles-grid">
           <div 
@@ -57,7 +68,7 @@
       <!-- Generate Button -->
       <button class="generate-btn" @click="generateDesign" :disabled="!uploadedImage || isGenerating">
         <span v-if="isGenerating">Generating...</span>
-        <span v-else>Generate →</span>
+        <span v-else>Generate →</span>  
       </button>
     </div>
 
@@ -102,10 +113,17 @@
 <script>
 export default {
   name: 'DesignPage',
+  props: {
+    kitchenStyles: {
+      type: Object,
+      default: () => ({})
+    }
+  },
   data() {
     return {
       selectedRoomType: 'kitchen',
       selectedStyle: 1,
+      selectedKitchenStyle: '',
       uploadedImage: null,
       generatedImage: null,
       showFullscreen: false,
@@ -162,11 +180,28 @@ export default {
       if (!this.uploadedImage) return;
       
       this.isGenerating = true;
-      const selectedStyleName = this.roomStyles.find(s => s.id === this.selectedStyle)?.name || 'Modern';
+      let selectedStyleName, kitchenStyle;
+      
+      if (this.selectedRoomType === 'kitchen' && this.selectedKitchenStyle) {
+        selectedStyleName = this.kitchenStyles[this.selectedKitchenStyle]?.name || 'Modern';
+        kitchenStyle = this.selectedKitchenStyle;
+      } else {
+        selectedStyleName = this.roomStyles.find(s => s.id === this.selectedStyle)?.name || 'Modern';
+      }
       
       try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 120000); // 2 minutes
+        
+        const requestBody = {
+          image: this.uploadedImage,
+          roomType: this.selectedRoomType,
+          roomStyle: selectedStyleName
+        };
+        
+        if (kitchenStyle) {
+          requestBody.kitchenStyle = kitchenStyle;
+        }
         
         const response = await fetch('/api/generate-design', {
           method: 'POST',
@@ -174,11 +209,7 @@ export default {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
           },
-          body: JSON.stringify({
-            image: this.uploadedImage,
-            roomType: this.selectedRoomType,
-            roomStyle: selectedStyleName
-          }),
+          body: JSON.stringify(requestBody),
           signal: controller.signal
         });
         
@@ -325,6 +356,17 @@ export default {
   border-radius: 6px;
   color: white;
   font-size: 14px;
+}
+
+.kitchen-styles {
+  margin-bottom: 20px;
+}
+
+.kitchen-styles label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .room-styles label {

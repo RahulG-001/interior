@@ -7,9 +7,19 @@ use App\Models\AiCredit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
+use Inertia\Inertia;
 
 class DesignController extends Controller
 {
+    public function index()
+    {
+        $kitchenStyles = json_decode(file_get_contents(resource_path('data/kitchen-styles.json')), true);
+        
+        return Inertia::render('design/index', [
+            'kitchenStyles' => $kitchenStyles['kitchen_styles']
+        ]);
+    }
+
     public function generateDesign(Request $request)
     {
         $request->validate([
@@ -19,50 +29,112 @@ class DesignController extends Controller
         ]);
 
         try {
+
+             $styleKeywords = '';
+            $extraDetails  = '';
+
             // Get custom prompt from database or use default
             $roomPrompt = RoomPrompt::where('room_type', $request->roomType)->first();
-            
+
             if ($roomPrompt) {
-                $prompt = str_replace('{roomStyle}', $request->roomStyle, $roomPrompt->prompt);
+                $prompt = str_replace(
+                    ['{roomStyle}', '{roomType}'],
+                    [$request->roomStyle, $request->roomType],
+                    $roomPrompt->prompt
+                );
             } else {
-                $prompt = "
-                Create a REALISTIC interior redesign of this {$request->roomType} in {$request->roomStyle} style.
-                This must look like an actual, professionally executed interior design — NOT conceptual, NOT artistic, NOT imaginary.
+                $prompt = "Redesign this {roomType} into a professionally designed {roomStyle} interior.
 
-                STRICT RULES:
-                - Keep the existing room layout, size, walls, floor tiles, ceiling height, windows, doors, and balcony EXACTLY the same.
-                - Do NOT move, resize, replace, or redesign windows or doors.
-                - Do NOT change room structure or proportions.
+                Preserve ONLY:
+                - room layout
+                - wall positions
+                - door and window locations
+                - ceiling height
 
-                DESIGN REQUIREMENTS:
-                - Add practical, real-world furniture that can be bought and used in real homes.
-                - Use realistic materials, finishes, fabrics, and colors commonly used in real interior projects.
-                - Furniture placement must be functional, comfortable, and logical for daily use.
-                - Lighting should look natural and achievable with real ceiling lights, wall lights, or lamps.
-                - Add simple, tasteful decor (curtains, cushions, rug, wall art, plants) — nothing exaggerated.
+                Add and install new furniture, cabinetry, finishes, colors, materials, lighting fixtures, and decor elements.
 
-                VISUAL QUALITY:
-                - Photorealistic interior
-                - Natural daylight + realistic indoor lighting
-                - Accurate scale and proportions
-                - Real textures (wood, fabric, glass, metal)
-                - Looks like a real apartment ready to move in
-                - No fantasy elements, no dramatic colors, no showroom exaggeration
+                If the room is empty or unfinished, fully furnish and complete the interior appropriately.
 
-                The final result should look like a real interior photograph of a fully furnished {$request->roomType}.
-                ";
+                Do NOT reuse any existing furniture or materials.
+
+                Use realistic, real-world interior design standards with correct proportions and practical materials.
+
+                The final image must look clearly different from the original, like a completed interior renovation.
+
+                Photorealistic, natural lighting, professional interior photography.";
             }
 
-            $response = Http::timeout(120)->withHeaders([
-                'Authorization' => 'Bearer ' . env('OPENAI_API_KEY'),
-                'Content-Type' => 'application/json',
-            ])->post('https://api.openai.com/v1/images/generations', [
-                'model' => 'dall-e-3',
-                'prompt' => $prompt,
-                'n' => 1,
-                'size' => '1024x1024',
-                'quality' => 'standard'
-            ]);
+            if ($request->roomType === 'kitchen' && $styleKeywords) {
+                $prompt .= " Style focus: {$styleKeywords}.";
+            }
+
+            if ($extraDetails) {
+                $prompt .= " Include details such as {$extraDetails}.";
+            }
+
+             $imageData = $request->image;
+
+            if (str_starts_with($imageData, 'data:image')) {
+                $imageData = substr($imageData, strpos($imageData, ',') + 1);
+            }
+
+            $imageContent = base64_decode($imageData);
+
+            $tempImagePath = tempnam(sys_get_temp_dir(), 'room_') . '.png';
+            file_put_contents($tempImagePath, $imageContent);
+
+            [$width, $height] = getimagesize($tempImagePath);
+
+            //  dd($prompt);
+            $prompt = trim(preg_replace('/\s+/', ' ', $prompt));
+
+            $prompt = str_replace(
+                ['{roomType}', '{roomStyle}'],
+                [$request->roomType, $request->roomStyle],
+                $prompt
+            );
+
+            $image = imagecreatefromstring($imageContent);
+
+            $rgbaImage = imagecreatetruecolor(imagesx($image), imagesy($image));
+            imagealphablending($rgbaImage, false);
+            imagesavealpha($rgbaImage, true);
+
+            $transparent = imagecolorallocatealpha($rgbaImage, 0, 0, 0, 127);
+            imagefill($rgbaImage, 0, 0, $transparent);
+
+            imagecopy($rgbaImage, $image, 0, 0, 0, 0, imagesx($image), imagesy($image));
+
+            $tempImagePath = tempnam(sys_get_temp_dir(), 'room_') . '.png';
+            imagepng($rgbaImage, $tempImagePath);
+
+            imagedestroy($image);
+            imagedestroy($rgbaImage);
+
+            $maskPath = tempnam(sys_get_temp_dir(), 'mask_') . '.png';
+
+            $mask = imagecreatetruecolor(imagesx($rgbaImage), imagesy($rgbaImage));
+            imagealphablending($mask, false);
+            imagesavealpha($mask, true);
+
+            // White = editable (opaque)
+            $white = imagecolorallocatealpha($mask, 255, 255, 255, 0);
+            imagefill($mask, 0, 0, $white);
+
+            imagepng($mask, $maskPath);
+            imagedestroy($mask);
+
+            $response = Http::timeout(120)
+                ->withHeaders([
+                    'Authorization' => 'Bearer ' . env('OPENAI_API_KEY'),
+                ])
+                ->attach('image', file_get_contents($tempImagePath), 'room.png')
+                ->attach('mask', file_get_contents($maskPath), 'mask.png')
+                ->post('https://api.openai.com/v1/images/edits', [
+                    'prompt' => $prompt,
+                    'n'      => 1,
+                    'size'   => '1024x1024',
+                ]);
 
             if ($response->successful()) {
                 $data = $response->json();
@@ -81,11 +153,18 @@ class DesignController extends Controller
                 
                 return response()->json([
                     'success' => true,
-                    'image_url' => $data['data'][0]['url']
+                    'image_url' => $data['data'][0]['url'],
+                    'prompt' => $prompt
                 ]);
             }
 
-            return response()->json(['success' => false, 'error' => 'Failed to generate image'], 500);
+            @unlink($tempImagePath);
+            @unlink($maskPath);
+
+            return response()->json([
+                'success' => false,
+                'error' => $response->json() ?? $response->body(),
+            ], $response->status());
 
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'error' => $e->getMessage()], 500);
