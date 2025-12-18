@@ -1,0 +1,64 @@
+{
+  "kitchen_styles": {
+    "modern_minimal": {
+      "name": "Modern Minimal Kitchen",
+      "flooring": "Large-format vitrified tiles with matte finish",
+      "backsplash": "Solid color backsplash",
+      "walls": "Seamless quartz slab wall",
+      "ceiling": "Flat gypsum false ceiling with concealed panels",
+      "lighting": "Warm LED strip lights, under-cabinet lights",
+      "ventilation": "Built-in chimney, cross ventilation window",
+      "cabinets": "Handle-less modular cabinets with soft-close drawers",
+      "appliances": "Integrated appliances",
+      "prompt_keywords": "modern minimal kitchen, handleless cabinets, quartz walls, warm LED lighting, clean lines, seamless design, integrated appliances, matte finish tiles"
+    },
+    "luxury_contemporary": {
+      "name": "Luxury Contemporary Kitchen",
+      "flooring": "Italian marble flooring, high-gloss vitrified tiles",
+      "backsplash": "Glass backsplash",
+      "walls": "Marble-textured wall panels",
+      "ceiling": "Layered false ceiling with cove lighting",
+      "lighting": "Designer pendant lights, ambient LED lighting",
+      "ventilation": "Auto-clean chimney, fresh air ventilation system",
+      "cabinets": "High-gloss modular cabinets with smart storage units",
+      "appliances": "Premium fittings",
+      "prompt_keywords": "luxury contemporary kitchen, Italian marble floors, glass backsplash, high-gloss cabinets, designer pendant lights, marble textures, premium finishes, smart storage"
+    },
+    "scandinavian_style": {
+      "name": "Scandinavian Style Kitchen",
+      "flooring": "Wooden laminate flooring, light tone vitrified tiles",
+      "backsplash": "White subway tile backsplash",
+      "walls": "Pastel wall paint",
+      "ceiling": "Simple flat ceiling with wooden beams",
+      "lighting": "Natural light focus, soft white LED lights",
+      "ventilation": "Wall-mounted chimney, window ventilation",
+      "cabinets": "Light wood cabinets with open shelving",
+      "appliances": "Minimal hardware",
+      "prompt_keywords": "scandinavian kitchen, light wood cabinets, white subway tiles, wooden beams, natural light, pastel colors, open shelving, minimal design, cozy atmosphere"
+    },
+    "industrial_style": {
+      "name": "Industrial Style Kitchen",
+      "flooring": "Concrete finish tiles, rustic vitrified flooring",
+      "backsplash": "Exposed brick backsplash",
+      "walls": "Cement-texture walls",
+      "ceiling": "Open ceiling with black metal framework",
+      "lighting": "Track lighting, focused task lights",
+      "ventilation": "Heavy-duty chimney, exhaust fan",
+      "cabinets": "Matte black cabinets with metal shelves",
+      "appliances": "Industrial fittings",
+      "prompt_keywords": "industrial kitchen, exposed brick, concrete floors, black metal framework, track lighting, matte black cabinets, raw materials, urban loft style, heavy-duty appliances"
+    },
+    "budget_friendly": {
+      "name": "Budget-Friendly Smart Kitchen",
+      "flooring": "Anti-skid ceramic tiles, standard vitrified tiles",
+      "backsplash": "Printed tile backsplash",
+      "walls": "Easy-clean wall panels",
+      "ceiling": "PVC moisture-resistant ceiling",
+      "lighting": "Energy-efficient LED panels, under-shelf lighting",
+      "ventilation": "Standard chimney, window ventilation",
+      "cabinets": "Modular cabinets (PVC/laminate) with space-saving storage",
+      "appliances": "Durable fittings",
+      "prompt_keywords": "budget-friendly kitchen, ceramic tiles, printed backsplash, PVC cabinets, energy-efficient lighting, practical design, space-saving storage, clean and functional"
+    }
+  }
+}

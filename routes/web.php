@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Public routes (no authentication required)
-Route::get('/design', [VelzonRoutesController::class, 'design']);
+Route::get('/design', [App\Http\Controllers\DesignController::class, 'index']);
 Route::get('/settings', [App\Http\Controllers\SettingsController::class, 'index']);
 Route::post('/api/generate-design', [App\Http\Controllers\DesignController::class, 'generateDesign']);
 Route::post('/api/update-prompts', [App\Http\Controllers\SettingsController::class, 'updatePrompts']);
