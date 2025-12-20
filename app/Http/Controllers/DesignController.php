@@ -14,160 +14,194 @@ class DesignController extends Controller
     public function index()
     {
         $kitchenStyles = json_decode(file_get_contents(resource_path('data/kitchen-styles.json')), true);
+        $bedroomStyles = json_decode(file_get_contents(resource_path('data/bedroom-styles.json')), true);
+        $livingRoomStyles = json_decode(file_get_contents(resource_path('data/living-room-styles.json')), true);
+        $diningRoomStyles = json_decode(file_get_contents(resource_path('data/dining-room-styles.json')), true);
         
         return Inertia::render('design/index', [
-            'kitchenStyles' => $kitchenStyles['kitchen_styles']
+            'kitchenStyles' => $kitchenStyles['kitchen_styles'],
+            'bedroomStyles' => $bedroomStyles['bedroom_styles'],
+            'livingRoomStyles' => $livingRoomStyles['living_room_styles'],
+            'diningRoomStyles' => $diningRoomStyles['dining_room_styles']
         ]);
     }
 
     public function generateDesign(Request $request)
     {
         $request->validate([
-            'image' => 'required|string',
-            'roomType' => 'required|string',
-            'roomStyle' => 'required|string'
+            'image'     => 'required|string', // base64 image
+            'roomType'  => 'required|string', // kitchen | bedroom | living_room | dining_room
+            'roomStyle' => 'required|string', // style key
         ]);
 
         try {
 
-             $styleKeywords = '';
-            $extraDetails  = '';
-
-            // Get custom prompt from database or use default
-            $roomPrompt = RoomPrompt::where('room_type', $request->roomType)->first();
-
-            if ($roomPrompt) {
-                $prompt = str_replace(
-                    ['{roomStyle}', '{roomType}'],
-                    [$request->roomStyle, $request->roomType],
-                    $roomPrompt->prompt
-                );
-            } else {
-                $prompt = "Redesign this {roomType} into a professionally designed {roomStyle} interior.
-
-                Preserve ONLY:
-                - room layout
-                - wall positions
-                - door and window locations
-                - ceiling height
-
-                Add and install new furniture, cabinetry, finishes, colors, materials, lighting fixtures, and decor elements.
-
-                If the room is empty or unfinished, fully furnish and complete the interior appropriately.
-
-                Do NOT reuse any existing furniture or materials.
-
-                Use realistic, real-world interior design standards with correct proportions and practical materials.
-
-                The final image must look clearly different from the original, like a completed interior renovation.
-
-                Photorealistic, natural lighting, professional interior photography.";
-            }
-
-            if ($request->roomType === 'kitchen' && $styleKeywords) {
-                $prompt .= " Style focus: {$styleKeywords}.";
-            }
-
-            if ($extraDetails) {
-                $prompt .= " Include details such as {$extraDetails}.";
-            }
-
-             $imageData = $request->image;
+            /* -------------------------------------------------
+            | 1. Decode Base64 Image & Save Temporarily
+            |-------------------------------------------------*/
+            $imageData = $request->image;
 
             if (str_starts_with($imageData, 'data:image')) {
                 $imageData = substr($imageData, strpos($imageData, ',') + 1);
             }
 
-            $imageContent = base64_decode($imageData);
+            $imageBinary = base64_decode($imageData);
 
-            $tempImagePath = tempnam(sys_get_temp_dir(), 'room_') . '.png';
-            file_put_contents($tempImagePath, $imageContent);
+            if ($imageBinary === false) {
+                return response()->json([
+                    'success' => false,
+                    'error'   => 'Invalid image data',
+                ], 422);
+            }
 
-            [$width, $height] = getimagesize($tempImagePath);
+            $tempImagePath = storage_path('app/temp_' . uniqid() . '.png');
+            file_put_contents($tempImagePath, $imageBinary);
 
-            //  dd($prompt);
+            /* -------------------------------------------------
+            | 2. Load Style Keywords (ROOM-AWARE)
+            |-------------------------------------------------*/
+            $styleKeywords = '';
+
+            $roomConfig = [
+                'kitchen'     => ['file' => 'kitchen-styles.json',     'key' => 'kitchen_styles'],
+                'bedroom'     => ['file' => 'bedroom-styles.json',     'key' => 'bedroom_styles'],
+                'living_room' => ['file' => 'living-room-styles.json', 'key' => 'living_room_styles'],
+                'dining_room' => ['file' => 'dining-room-styles.json', 'key' => 'dining_room_styles'],
+            ];
+
+            if (isset($roomConfig[$request->roomType])) {
+
+                $config = $roomConfig[$request->roomType];
+                $path   = resource_path('data/' . $config['file']);
+
+                if (file_exists($path)) {
+                    $styles = json_decode(file_get_contents($path), true);
+
+                    $styleKeywords =
+                        $styles[$config['key']][$request->roomStyle]['prompt_keywords']
+                        ?? '';
+                }
+            }
+
+            /* -------------------------------------------------
+            | 3. STRONG PROMPT (LAYOUT & CAMERA LOCK)
+            |-------------------------------------------------*/
+            $prompt = "
+            ABSOLUTE PIXEL-LOCK INSTRUCTION (CRITICAL):
+            You must modify the existing image IN PLACE.
+            Do NOT generate a new image.
+
+            FRAME & CAMERA LOCK:
+            - Treat the original image as a fixed background plate
+            - Output must have identical framing, crop, and composition
+            - Do NOT recenter, recompose, shift, or reframe
+            - The distance of all objects from the image edges must remain unchanged
+            - The result should visually align if overlaid on the original image
+
+            CAMERA CONSTRAINTS:
+            - Same camera position
+            - Same camera height
+            - Same viewing angle
+            - Same phone camera perspective
+            - No zoom, no crop, no perspective correction
+            - No architectural or showroom photography
+
+            TASK:
+            This is an existing {$request->roomType} photographed with a phone camera.
+            Visually renovate the space by repainting and refacing surfaces ONLY.
+
+            STRICTLY FORBIDDEN:
+            - Any layout change
+            - Any movement or resizing of cabinets, counters, walls, windows, or doors
+            - Any change in passage width or counter depth
+            - Any reinterpretation of geometry
+            - Any camera or framing change
+
+            ALLOWED CHANGES ONLY:
+            - Surface finishes
+            - Wall colors or tiles
+            - Lighting fixtures
+            - Cabinet finishes (if present)
+
+            REALISM:
+            - Natural lighting
+            - Slight imperfections allowed
+            - Must look like the SAME PHOTO with upgraded finishes
+            - Not a render, not a catalog image
+            ";
+
+            if (!empty($styleKeywords)) {
+                $prompt .= "\nSTYLE FOCUS: {$styleKeywords}\n";
+            }
+
             $prompt = trim(preg_replace('/\s+/', ' ', $prompt));
 
-            $prompt = str_replace(
-                ['{roomType}', '{roomStyle}'],
-                [$request->roomType, $request->roomStyle],
-                $prompt
-            );
-
-            $image = imagecreatefromstring($imageContent);
-
-            $rgbaImage = imagecreatetruecolor(imagesx($image), imagesy($image));
-            imagealphablending($rgbaImage, false);
-            imagesavealpha($rgbaImage, true);
-
-            $transparent = imagecolorallocatealpha($rgbaImage, 0, 0, 0, 127);
-            imagefill($rgbaImage, 0, 0, $transparent);
-
-            imagecopy($rgbaImage, $image, 0, 0, 0, 0, imagesx($image), imagesy($image));
-
-            $tempImagePath = tempnam(sys_get_temp_dir(), 'room_') . '.png';
-            imagepng($rgbaImage, $tempImagePath);
-
-            imagedestroy($image);
-            imagedestroy($rgbaImage);
-
-            $maskPath = tempnam(sys_get_temp_dir(), 'mask_') . '.png';
-
-            $mask = imagecreatetruecolor(imagesx($rgbaImage), imagesy($rgbaImage));
-            imagealphablending($mask, false);
-            imagesavealpha($mask, true);
-
-            // White = editable (opaque)
-            $white = imagecolorallocatealpha($mask, 255, 255, 255, 0);
-            imagefill($mask, 0, 0, $white);
-
-            imagepng($mask, $maskPath);
-            imagedestroy($mask);
-
+            /* -------------------------------------------------
+            | 4. OpenAI IMAGE EDIT
+            |-------------------------------------------------*/
             $response = Http::timeout(120)
                 ->withHeaders([
                     'Authorization' => 'Bearer ' . env('OPENAI_API_KEY'),
                 ])
-                ->attach('image', file_get_contents($tempImagePath), 'room.png')
-                ->attach('mask', file_get_contents($maskPath), 'mask.png')
+                ->attach('image', fopen($tempImagePath, 'r'), 'room.png')
                 ->post('https://api.openai.com/v1/images/edits', [
+                    'model'  => 'gpt-image-1',
                     'prompt' => $prompt,
-                    'n'      => 1,
                     'size'   => '1024x1024',
+                    'n'      => 1,
                 ]);
 
-            if ($response->successful()) {
-                $data = $response->json();
-                
-                // Extract cost from response headers or calculate based on model/size
-                $cost = $this->calculateCost('dall-e-3', '1024x1024', $response->headers());
-                
-                AiCredit::create([
-                    'room_type' => $request->roomType,
-                    'room_style' => $request->roomStyle,
-                    'cost' => $cost,
-                    'model' => 'dall-e-3',
-                    'size' => '1024x1024',
-                    'ip_address' => $request->ip()
-                ]);
-                
+            unlink($tempImagePath);
+
+            if (!$response->successful()) {
                 return response()->json([
-                    'success' => true,
-                    'image_url' => $data['data'][0]['url'],
-                    'prompt' => $prompt
-                ]);
+                    'success' => false,
+                    'error'   => $response->json() ?? $response->body(),
+                ], $response->status());
             }
 
-            @unlink($tempImagePath);
-            @unlink($maskPath);
+            $data = $response->json();
+
+            /* -------------------------------------------------
+            | 5. Handle Base64 Output
+            |-------------------------------------------------*/
+            if (!isset($data['data'][0]['b64_json'])) {
+                return response()->json([
+                    'success' => false,
+                    'error'   => 'No image returned by OpenAI',
+                ], 500);
+            }
+
+            $finalImageBinary = base64_decode($data['data'][0]['b64_json']);
+
+            $fileName = 'ai-designs/' . uniqid('design_') . '.png';
+            Storage::disk('public')->put($fileName, $finalImageBinary);
+
+            $imageUrl = asset('storage/' . $fileName);
+
+            /* -------------------------------------------------
+            | 6. Credit Log
+            |-------------------------------------------------*/
+            AiCredit::create([
+                'room_type'  => $request->roomType,
+                'room_style' => $request->roomStyle,
+                'cost'       => 0,
+                'model'      => 'gpt-image-1',
+                'size'       => '1024x1024',
+                'ip_address' => $request->ip(),
+            ]);
 
             return response()->json([
-                'success' => false,
-                'error' => $response->json() ?? $response->body(),
-            ], $response->status());
+                'success'   => true,
+                'image_url'=> $imageUrl,
+                'prompt'   => $prompt,
+            ]);
 
-        } catch (\Exception $e) {
-            return response()->json(['success' => false, 'error' => $e->getMessage()], 500);
+        } catch (\Throwable $e) {
+            return response()->json([
+                'success' => false,
+                'error'   => $e->getMessage(),
+            ], 500);
         }
     }
 

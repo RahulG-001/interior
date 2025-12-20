@@ -1,0 +1,54 @@
+{
+  "bedroom_styles": {
+    "modern_minimal": {
+      "name": "Modern Minimal Bedroom",
+      "flooring": "Wooden laminate or matte vitrified tiles",
+      "walls": "Neutral tone paint with accent wall",
+      "ceiling": "Flat gypsum ceiling with concealed lighting",
+      "lighting": "Warm LED strip lights, bedside wall lights",
+      "furniture": "Low-profile bed, handle-less wardrobes",
+      "decor": "Minimal decor, clean lines",
+      "prompt_keywords": "modern minimal bedroom, neutral colors, clean lines, low profile bed, warm LED lighting, minimal decor, calm and elegant"
+    },
+    "luxury_contemporary": {
+      "name": "Luxury Contemporary Bedroom",
+      "flooring": "Marble or premium wooden flooring",
+      "walls": "Textured panels or wallpaper accent wall",
+      "ceiling": "Layered false ceiling with cove lighting",
+      "lighting": "Designer pendant lights, ambient lighting",
+      "furniture": "Upholstered bed, premium wardrobes",
+      "decor": "Luxury fabrics, statement art pieces",
+      "prompt_keywords": "luxury contemporary bedroom, upholstered bed, textured walls, marble flooring, ambient lighting, premium finishes, elegant atmosphere"
+    },
+    "scandinavian_style": {
+      "name": "Scandinavian Bedroom",
+      "flooring": "Light wooden flooring",
+      "walls": "Soft pastel or white walls",
+      "ceiling": "Simple flat ceiling",
+      "lighting": "Natural light, soft white lamps",
+      "furniture": "Light wood furniture, open shelves",
+      "decor": "Cozy textiles, minimal accessories",
+      "prompt_keywords": "scandinavian bedroom, light wood furniture, pastel walls, cozy textiles, natural light, simple and calm design"
+    },
+    "bohemian_style": {
+      "name": "Bohemian Bedroom",
+      "flooring": "Wooden or patterned tiles",
+      "walls": "Warm earthy tones or textured paint",
+      "ceiling": "Flat ceiling with hanging lights",
+      "lighting": "Warm ambient lamps, fairy lights",
+      "furniture": "Wooden bed, open shelves",
+      "decor": "Plants, layered textiles, artistic decor",
+      "prompt_keywords": "bohemian bedroom, earthy colors, layered textiles, indoor plants, artistic decor, cozy and creative atmosphere"
+    },
+    "budget_friendly": {
+      "name": "Budget-Friendly Bedroom",
+      "flooring": "Ceramic or standard vitrified tiles",
+      "walls": "Simple paint finish",
+      "ceiling": "Flat ceiling",
+      "lighting": "Basic LED lights",
+      "furniture": "Compact bed, modular wardrobe",
+      "decor": "Simple curtains and wall art",
+      "prompt_keywords": "budget bedroom, simple furniture, ceramic flooring, basic lighting, clean and functional design"
+    }
+  }
+}
