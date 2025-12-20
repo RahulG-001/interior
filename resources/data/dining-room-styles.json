@@ -1,0 +1,54 @@
+{
+  "dining_room_styles": {
+    "modern_minimal": {
+      "name": "Modern Minimal Dining Room",
+      "flooring": "Vitrified tiles or wooden flooring",
+      "walls": "Neutral walls with subtle texture",
+      "ceiling": "Flat ceiling with pendant lighting",
+      "lighting": "Warm pendant lights above dining table",
+      "furniture": "Sleek dining table with minimal chairs",
+      "decor": "Minimal centerpiece",
+      "prompt_keywords": "modern minimal dining room, sleek dining table, pendant lighting, neutral walls, clean and elegant design"
+    },
+    "luxury_contemporary": {
+      "name": "Luxury Contemporary Dining Room",
+      "flooring": "Marble or premium tiles",
+      "walls": "Decorative panels or wallpaper",
+      "ceiling": "False ceiling with ambient lighting",
+      "lighting": "Designer chandelier",
+      "furniture": "Large dining table with upholstered chairs",
+      "decor": "Luxury table decor",
+      "prompt_keywords": "luxury dining room, marble flooring, chandelier lighting, upholstered dining chairs, elegant and premium look"
+    },
+    "scandinavian_style": {
+      "name": "Scandinavian Dining Room",
+      "flooring": "Light wood flooring",
+      "walls": "White or pastel walls",
+      "ceiling": "Simple ceiling",
+      "lighting": "Natural light and soft pendants",
+      "furniture": "Light wood dining set",
+      "decor": "Minimal natural decor",
+      "prompt_keywords": "scandinavian dining room, light wood furniture, pastel walls, natural lighting, simple and cozy dining space"
+    },
+    "traditional_indian": {
+      "name": "Traditional Indian Dining Room",
+      "flooring": "Polished marble or patterned tiles",
+      "walls": "Warm tones with traditional artwork",
+      "ceiling": "Simple ceiling with decorative lighting",
+      "lighting": "Warm hanging lamps",
+      "furniture": "Solid wood dining table",
+      "decor": "Ethnic decor, brass accents",
+      "prompt_keywords": "traditional indian dining room, wooden dining table, warm colors, ethnic decor, cultural elegance, classic indian style"
+    },
+    "budget_friendly": {
+      "name": "Budget-Friendly Dining Room",
+      "flooring": "Ceramic or vitrified tiles",
+      "walls": "Simple paint",
+      "ceiling": "Plain ceiling",
+      "lighting": "Basic LED lights",
+      "furniture": "Compact dining table set",
+      "decor": "Simple decor",
+      "prompt_keywords": "budget dining room, simple dining table, ceramic flooring, basic lighting, practical and clean design"
+    }
+  }
+}

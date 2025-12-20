@@ -47,8 +47,38 @@
         </select>
       </div>
 
+      <div v-if="selectedRoomType === 'living-room'" class="kitchen-styles">
+        <label>Living Room Style</label>
+        <select v-model="selectedLivingRoomStyle" class="room-dropdown">
+          <option value="">Select Living Room Style</option>
+          <option v-for="(style, key) in livingRoomStyles" :key="key" :value="key">
+            {{ style.name }}
+          </option>
+        </select>
+      </div>
+
+      <div v-if="selectedRoomType === 'bedroom'" class="kitchen-styles">
+        <label>Bedroom Style</label>
+        <select v-model="selectedBedroomStyle" class="room-dropdown">
+          <option value="">Select Bedroom Style</option>
+          <option v-for="(style, key) in bedroomStyles" :key="key" :value="key">
+            {{ style.name }}
+          </option>
+        </select>
+      </div>
+
+      <div v-if="selectedRoomType === 'dining-room'" class="kitchen-styles">
+        <label>Dining Room Style</label>
+        <select v-model="selectedDiningRoomStyle" class="room-dropdown">
+          <option value="">Select Dining Room Style</option>
+          <option v-for="(style, key) in diningRoomStyles" :key="key" :value="key">
+            {{ style.name }}
+          </option>
+        </select>
+      </div>
+
       <!-- Room Style Grid (for non-kitchen rooms) -->
-      <div v-else class="room-styles">
+      <!-- <div v-else class="room-styles">
         <label>Room Style</label>
         <div class="styles-grid">
           <div 
@@ -63,7 +93,7 @@
             <div v-if="selectedStyle === style.id" class="check-icon">✓</div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Generate Button -->
       <button class="generate-btn" @click="generateDesign" :disabled="!uploadedImage || isGenerating">
@@ -117,6 +147,18 @@ export default {
     kitchenStyles: {
       type: Object,
       default: () => ({})
+    },
+    bedroomStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    livingRoomStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    diningRoomStyles: {
+      type: Object,
+      default: () => ({})
     }
   },
   data() {
@@ -124,6 +166,9 @@ export default {
       selectedRoomType: 'kitchen',
       selectedStyle: 1,
       selectedKitchenStyle: '',
+      selectedLivingRoomStyle: '',
+      selectedBedroomStyle: '',
+      selectedDiningRoomStyle: '',
       uploadedImage: null,
       generatedImage: null,
       showFullscreen: false,

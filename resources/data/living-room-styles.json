@@ -1,0 +1,54 @@
+{
+  "living_room_styles": {
+    "modern_minimal": {
+      "name": "Modern Minimal Living Room",
+      "flooring": "Large-format vitrified tiles or wooden flooring",
+      "walls": "Neutral paint with single accent wall",
+      "ceiling": "False ceiling with recessed lighting",
+      "lighting": "Warm ambient LED lighting",
+      "furniture": "Minimal sofa, sleek coffee table",
+      "decor": "Subtle artwork, minimal accessories",
+      "prompt_keywords": "modern minimal living room, neutral palette, sleek furniture, recessed lighting, clean layout, calm atmosphere"
+    },
+    "luxury_contemporary": {
+      "name": "Luxury Contemporary Living Room",
+      "flooring": "Italian marble or premium tiles",
+      "walls": "Designer wall panels, textured finishes",
+      "ceiling": "Layered ceiling with cove lighting",
+      "lighting": "Chandeliers, designer lamps",
+      "furniture": "Plush sofas, marble center table",
+      "decor": "Statement decor pieces",
+      "prompt_keywords": "luxury living room, marble flooring, plush sofas, chandelier lighting, premium finishes, elegant and grand look"
+    },
+    "industrial_style": {
+      "name": "Industrial Living Room",
+      "flooring": "Concrete or rustic tiles",
+      "walls": "Exposed brick or cement texture",
+      "ceiling": "Open ceiling with metal fixtures",
+      "lighting": "Track lights, industrial lamps",
+      "furniture": "Leather sofa, metal furniture",
+      "decor": "Raw textures, urban decor",
+      "prompt_keywords": "industrial living room, exposed brick walls, concrete flooring, metal furniture, urban loft style, raw materials"
+    },
+    "scandinavian_style": {
+      "name": "Scandinavian Living Room",
+      "flooring": "Light wooden flooring",
+      "walls": "White or pastel walls",
+      "ceiling": "Simple flat ceiling",
+      "lighting": "Natural light, soft lamps",
+      "furniture": "Light wood sofa, open shelves",
+      "decor": "Minimal natural decor",
+      "prompt_keywords": "scandinavian living room, light wood furniture, natural lighting, pastel walls, cozy and minimal design"
+    },
+    "budget_friendly": {
+      "name": "Budget-Friendly Living Room",
+      "flooring": "Standard vitrified tiles",
+      "walls": "Simple paint finish",
+      "ceiling": "Plain ceiling",
+      "lighting": "LED tube lights",
+      "furniture": "Compact sofa set",
+      "decor": "Basic decor elements",
+      "prompt_keywords": "budget living room, simple furniture, standard tiles, basic lighting, functional and neat design"
+    }
+  }
+}

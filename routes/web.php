@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Root redirect
+Route::get('/', function () {
+    return redirect('/design');
+});
+
 // Public routes (no authentication required)
 Route::get('/design', [App\Http\Controllers\DesignController::class, 'index']);
 Route::get('/settings', [App\Http\Controllers\SettingsController::class, 'index']);
@@ -26,7 +31,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::controller(VelzonRoutesController::class)->group(function () {
 
         // dashboards
-        Route::get('/', 'dashboard');
+        Route::get('/dashboard', 'dashboard');
         Route::get('/dashboard/analytics', 'dashboard_analytics');
         Route::get('/dashboard/crm', 'dashboard_crm');
         Route::get('/dashboard/crypto', 'dashboard_crypto');
