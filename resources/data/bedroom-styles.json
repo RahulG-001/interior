@@ -1,54 +1,124 @@
 {
   "bedroom_styles": {
-    "modern_minimal": {
-      "name": "Modern Minimal Bedroom",
-      "flooring": "Wooden laminate or matte vitrified tiles",
-      "walls": "Neutral tone paint with accent wall",
-      "ceiling": "Flat gypsum ceiling with concealed lighting",
-      "lighting": "Warm LED strip lights, bedside wall lights",
-      "furniture": "Low-profile bed, handle-less wardrobes",
-      "decor": "Minimal decor, clean lines",
-      "prompt_keywords": "modern minimal bedroom, neutral colors, clean lines, low profile bed, warm LED lighting, minimal decor, calm and elegant"
+    "industrial_chic": {
+      "name": "Industrial Chic Bedroom",
+      "description": "Raw sophistication with exposed elements and modern comfort",
+      "flooring": "Polished concrete or industrial wood with metal accents",
+      "walls": "Exposed brick or textured grey concrete effect with metal finishes",
+      "ceiling": "Open beam design with exposed ductwork and metal pipes",
+      "lighting": "Edison bulb fixtures, track lights, metal pendant lamps",
+      "furniture": "Metal frame bed, steel storage units, leather upholstery",
+      "decor": "Vintage industrial pieces, metal wall art, leather accents, distressed finishes",
+      "color_palette": "#3A3A3A, #8B7355, #CD853F, #D3D3D3",
+      "prompt_keywords": "industrial chic bedroom, exposed brick, metal accents, Edison bulbs, concrete floors, vintage industrial, raw and edgy, urban modern"
     },
-    "luxury_contemporary": {
-      "name": "Luxury Contemporary Bedroom",
-      "flooring": "Marble or premium wooden flooring",
-      "walls": "Textured panels or wallpaper accent wall",
-      "ceiling": "Layered false ceiling with cove lighting",
-      "lighting": "Designer pendant lights, ambient lighting",
-      "furniture": "Upholstered bed, premium wardrobes",
-      "decor": "Luxury fabrics, statement art pieces",
-      "prompt_keywords": "luxury contemporary bedroom, upholstered bed, textured walls, marble flooring, ambient lighting, premium finishes, elegant atmosphere"
+    "japandi_fusion": {
+      "name": "Japandi Fusion Bedroom",
+      "description": "Blending Japanese minimalism with Scandinavian warmth and functionality",
+      "flooring": "Natural light oak or bamboo flooring with subtle texture",
+      "walls": "Soft neutral tones with natural linen or paper-textured wallpaper",
+      "ceiling": "Minimalist flat ceiling with natural wood beams",
+      "lighting": "Soft diffused lighting, paper lanterns, warm ambient LED strips",
+      "furniture": "Low platform bed, natural wood storage, woven baskets",
+      "decor": "Indoor plants, natural fibers, simple ikebana arrangements, zen garden elements",
+      "color_palette": "#F5F1EE, #D4C4B0, #A89B8B, #6B5D52",
+      "prompt_keywords": "japandi bedroom, minimalist design, natural materials, low platform bed, warm neutral tones, zen-inspired, cozy minimalism"
     },
-    "scandinavian_style": {
-      "name": "Scandinavian Bedroom",
-      "flooring": "Light wooden flooring",
-      "walls": "Soft pastel or white walls",
-      "ceiling": "Simple flat ceiling",
-      "lighting": "Natural light, soft white lamps",
-      "furniture": "Light wood furniture, open shelves",
-      "decor": "Cozy textiles, minimal accessories",
-      "prompt_keywords": "scandinavian bedroom, light wood furniture, pastel walls, cozy textiles, natural light, simple and calm design"
+    "maximalist_bold": {
+      "name": "Maximalist Bold Bedroom",
+      "description": "Vibrant, pattern-rich space celebrating color and personality",
+      "flooring": "Patterned tiles or bold geometric carpet with mixed textures",
+      "walls": "Multi-colored wallpaper, mixed patterns, or jewel-tone painted accent walls",
+      "ceiling": "Feature ceiling with bold color or patterned wallpaper",
+      "lighting": "Chandelier, colored pendant lights, neon accents, layered lighting",
+      "furniture": "Ornate bed frame, colorful upholstered pieces, statement furniture",
+      "decor": "Abundant artwork, decorative mirrors, sculptures, layered textiles, vintage collectibles",
+      "color_palette": "#FF6B6B, #4ECDC4, #FFE66D, #95E1D3, #6C5CE7",
+      "prompt_keywords": "maximalist bedroom, bold colors, mixed patterns, colorful furniture, eclectic decor, vibrant atmosphere, personality-driven design"
     },
-    "bohemian_style": {
-      "name": "Bohemian Bedroom",
-      "flooring": "Wooden or patterned tiles",
-      "walls": "Warm earthy tones or textured paint",
-      "ceiling": "Flat ceiling with hanging lights",
-      "lighting": "Warm ambient lamps, fairy lights",
-      "furniture": "Wooden bed, open shelves",
-      "decor": "Plants, layered textiles, artistic decor",
-      "prompt_keywords": "bohemian bedroom, earthy colors, layered textiles, indoor plants, artistic decor, cozy and creative atmosphere"
+    "coastal_serene": {
+      "name": "Coastal Serene Bedroom",
+      "description": "Beach-inspired tranquility with natural textures and ocean vibes",
+      "flooring": "Light sand-colored tiles or whitewashed wooden floors",
+      "walls": "Soft whites, light blues, or sandy beige with coastal patterns",
+      "ceiling": "Whitewashed wood paneling or light plaster ceiling",
+      "lighting": "Soft natural light, rattan pendant lights, coastal-themed wall sconces",
+      "furniture": "Weathered wood bed, driftwood accents, light upholstered pieces",
+      "decor": "Seashells, coral decorations, ocean-themed artwork, nautical textiles, rope details",
+      "color_palette": "#FFFFFF, #87CEEB, #F0E68C, #DEB887, #20B2AA",
+      "prompt_keywords": "coastal bedroom, beach-inspired, light blues and whites, natural textures, seafaring decor, nautical theme, calm seaside atmosphere"
     },
-    "budget_friendly": {
-      "name": "Budget-Friendly Bedroom",
-      "flooring": "Ceramic or standard vitrified tiles",
-      "walls": "Simple paint finish",
-      "ceiling": "Flat ceiling",
-      "lighting": "Basic LED lights",
-      "furniture": "Compact bed, modular wardrobe",
-      "decor": "Simple curtains and wall art",
-      "prompt_keywords": "budget bedroom, simple furniture, ceramic flooring, basic lighting, clean and functional design"
+    "art_deco_glamour": {
+      "name": "Art Deco Glamour Bedroom",
+      "description": "Sophisticated 1920s-inspired design with geometric elegance and luxury",
+      "flooring": "Polished black marble or chevron wooden parquet",
+      "walls": "Deep jewel-toned walls with gold geometric wallpaper or panels",
+      "ceiling": "Coffered ceiling with gold accents and decorative molding",
+      "lighting": "Brass chandeliers, geometric wall sconces, crystal pendant lights",
+      "furniture": "Velvet upholstered bed, mirrored furniture, brass-legged pieces",
+      "decor": "Art deco mirrors, geometric patterns, marble accents, tassel details, vintage glamour pieces",
+      "color_palette": "#1A1A1A, #2D5016, #D4AF37, #F4E4C1, #8B0000",
+      "prompt_keywords": "art deco bedroom, geometric patterns, gold accents, velvet furniture, marble details, 1920s glamour, luxurious and sophisticated"
+    },
+    "rustic_farmhouse": {
+      "name": "Rustic Farmhouse Bedroom",
+      "description": "Warm country charm with authentic rural simplicity and comfort",
+      "flooring": "Reclaimed wood flooring or distressed wooden planks",
+      "walls": "Shiplap walls, whitewashed wood paneling, or soft earth-tone paint",
+      "ceiling": "Exposed wooden beams or rustic timber ceiling",
+      "lighting": "Vintage lantern lights, wrought iron fixtures, warm bulb lighting",
+      "furniture": "Heavy wooden bed frame, vintage wooden dressers, farmhouse tables",
+      "decor": "Vintage quilts, barn door accents, galvanized metal decor, antique farmhouse accessories",
+      "color_palette": "#FFFFFF, #8B7355, #A0826D, #D2B48C, #FFFACD",
+      "prompt_keywords": "rustic farmhouse bedroom, shiplap walls, reclaimed wood, vintage decor, warm and cozy, country charm, authentic farmhouse"
+    },
+    "modern_tech_smart": {
+      "name": "Modern Tech-Smart Bedroom",
+      "description": "Contemporary design integrated with smart home technology and automation",
+      "flooring": "Polished concrete with smart heating or light wood with tech integration",
+      "walls": "Matte black or white walls with integrated smart panels",
+      "ceiling": "Flat ceiling with hidden smart lighting system and voice control",
+      "lighting": "Smart LED system with color-changing capabilities, motion-sensor lights",
+      "furniture": "Adjustable smart bed, tech-integrated wardrobes, charging surfaces",
+      "decor": "Minimalist tech decor, smart mirrors, digital art displays, clean technology elements",
+      "color_palette": "#000000, #FFFFFF, #1E90FF, #C0C0C0, #404040",
+      "prompt_keywords": "modern tech bedroom, smart home integration, automated lighting, minimalist tech design, contemporary smart bedroom"
+    },
+    "tropical_paradise": {
+      "name": "Tropical Paradise Bedroom",
+      "description": "Lush, vibrant space inspired by tropical destinations and nature",
+      "flooring": "Natural stone tiles or light wood with tropical patterns",
+      "walls": "Tropical wallpaper with jungle prints or painted tropical scenes",
+      "ceiling": "Flat ceiling with bamboo accents or tropical wood paneling",
+      "lighting": "Natural light maximized, warm overhead lights, tropical-themed fixtures",
+      "furniture": "Rattan furniture, wicker bed frame, natural wood storage pieces",
+      "decor": "Large indoor plants, tropical flowers, woven baskets, exotic textiles, nature-inspired artwork",
+      "color_palette": "#27AE60, #F39C12, #E74C3C, #3498DB, #2C3E50",
+      "prompt_keywords": "tropical paradise bedroom, jungle prints, indoor plants, rattan furniture, vibrant colors, exotic decor, lush and warm atmosphere"
+    },
+    "minimalist_zen": {
+      "name": "Minimalist Zen Bedroom",
+      "description": "Serene space focused on peace, balance, and essential simplicity",
+      "flooring": "Light bamboo or light grey polished concrete",
+      "walls": "Off-white, soft grey, or pale sage green with zero decorations",
+      "ceiling": "Simple flat ceiling with minimal fixtures",
+      "lighting": "Soft warm LED lights, simple pendant, natural window light",
+      "furniture": "Platform bed, low wooden furniture, minimal storage solutions",
+      "decor": "Single art piece, small plant, meditation corner, zero visual clutter",
+      "color_palette": "#F5F5F5, #E8E8E8, #BEBEBE, #C4B5A0, #9CAF88",
+      "prompt_keywords": "minimalist zen bedroom, peaceful design, neutral tones, zero clutter, meditation space, calm and balanced, pure simplicity"
+    },
+    "gothic_dramatic": {
+      "name": "Gothic Dramatic Bedroom",
+      "description": "Moody, sophisticated space with dark elegance and theatrical atmosphere",
+      "flooring": "Dark hardwood or black marble flooring with area rugs",
+      "walls": "Deep burgundy, charcoal, or black velvet walls with ornate details",
+      "ceiling": "Dark ceiling with dramatic crown molding and chandelier",
+      "lighting": "Ornate chandelier, candle-inspired sconces, moody ambient lighting",
+      "furniture": "Canopy bed with heavy drapes, carved wooden furniture, velvet upholstery",
+      "decor": "Gothic mirrors, ornate frames, dark artwork, damask patterns, velvet cushions",
+      "color_palette": "#1A0033, #2F2F2F, #8B0000, #DAA520, #F5DEB3",
+      "prompt_keywords": "gothic bedroom, dark and dramatic, burgundy and black, ornate details, moody atmosphere, theatrical design, sophisticated gothic"
     }
   }
 }

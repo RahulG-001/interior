@@ -1,54 +1,147 @@
 {
   "living_room_styles": {
-    "modern_minimal": {
-      "name": "Modern Minimal Living Room",
-      "flooring": "Large-format vitrified tiles or wooden flooring",
-      "walls": "Neutral paint with single accent wall",
-      "ceiling": "False ceiling with recessed lighting",
-      "lighting": "Warm ambient LED lighting",
-      "furniture": "Minimal sofa, sleek coffee table",
-      "decor": "Subtle artwork, minimal accessories",
-      "prompt_keywords": "modern minimal living room, neutral palette, sleek furniture, recessed lighting, clean layout, calm atmosphere"
+    "art_deco_elegance": {
+      "name": "Art Deco Elegance Living Room",
+      "description": "Sophisticated 1920s-inspired design with geometric patterns and luxury materials",
+      "flooring": "Black and white geometric marble or herringbone wooden parquet",
+      "walls": "Deep emerald or sapphire walls with gold geometric wallpaper or panels",
+      "ceiling": "Coffered ceiling with gold leaf accents and decorative molding",
+      "lighting": "Crystal chandeliers, brass wall sconces, geometric pendant lights",
+      "furniture": "Velvet upholstered sofa, mirrored coffee table, brass-legged side tables",
+      "decor": "Art deco mirrors, geometric throw pillows, sunburst wall art, marble sculptures",
+      "color_palette": "#1A1A1A, #2D5016, #D4AF37, #F4E4C1, #8B0000",
+      "style_features": "Geometric patterns, symmetry, luxurious textures, bold colors, metallic accents",
+      "prompt_keywords": "art deco living room, geometric patterns, gold accents, velvet furniture, marble details, 1920s glamour, sophisticated and luxurious"
     },
-    "luxury_contemporary": {
-      "name": "Luxury Contemporary Living Room",
-      "flooring": "Italian marble or premium tiles",
-      "walls": "Designer wall panels, textured finishes",
-      "ceiling": "Layered ceiling with cove lighting",
-      "lighting": "Chandeliers, designer lamps",
-      "furniture": "Plush sofas, marble center table",
-      "decor": "Statement decor pieces",
-      "prompt_keywords": "luxury living room, marble flooring, plush sofas, chandelier lighting, premium finishes, elegant and grand look"
+    "coastal_resort": {
+      "name": "Coastal Resort Living Room",
+      "description": "Serene beach-inspired space with light, airy, nautical elements and natural textures",
+      "flooring": "Light beige limestone or whitewashed wooden planks",
+      "walls": "Soft whites, light seafoam, or sandy beige with subtle wave patterns",
+      "ceiling": "Whitewashed wood paneling or light plaster with nautical beams",
+      "lighting": "Rattan pendant lights, coastal-themed wall sconces, natural abundant light",
+      "furniture": "Light upholstered sofa, driftwood coffee table, wicker side chairs",
+      "decor": "Seashell accents, coral centerpieces, maritime artwork, rope details, linen curtains",
+      "color_palette": "#FFFFFF, #87CEEB, #F0E68C, #DEB887, #20B2AA",
+      "style_features": "Natural light, ocean colors, weathered textures, nautical themes, relaxed elegance",
+      "prompt_keywords": "coastal living room, beach-inspired, light blues and whites, driftwood furniture, nautical decor, serene and breezy, seaside retreat"
     },
-    "industrial_style": {
-      "name": "Industrial Living Room",
-      "flooring": "Concrete or rustic tiles",
-      "walls": "Exposed brick or cement texture",
-      "ceiling": "Open ceiling with metal fixtures",
-      "lighting": "Track lights, industrial lamps",
-      "furniture": "Leather sofa, metal furniture",
-      "decor": "Raw textures, urban decor",
-      "prompt_keywords": "industrial living room, exposed brick walls, concrete flooring, metal furniture, urban loft style, raw materials"
+    "maximalist_eclectic": {
+      "name": "Maximalist Eclectic Living Room",
+      "description": "Bold, vibrant space celebrating color, pattern, and personality with curated collections",
+      "flooring": "Mixed patterns with bold geometric carpet or patterned tiles with runners",
+      "walls": "Multi-colored wallpaper, mixed patterns, jewel-tone paint with gallery wall",
+      "ceiling": "Feature ceiling with bold color, patterns, or artistic murals",
+      "lighting": "Ornate chandelier, colored pendant lights, vintage floor lamps, layered lighting",
+      "furniture": "Colorful upholstered sofa, vintage pieces, eclectic side tables, statement chairs",
+      "decor": "Gallery walls with mixed artwork, decorative mirrors, sculptures, layered textiles, vintage collectibles",
+      "color_palette": "#FF6B6B, #4ECDC4, #FFE66D, #95E1D3, #6C5CE7",
+      "style_features": "Bold colors, mixed patterns, vintage and modern blend, personal collections, theatrical atmosphere",
+      "prompt_keywords": "maximalist living room, bold colors, eclectic decor, mixed patterns, colorful furniture, vibrant personality, artistic and expressive"
     },
-    "scandinavian_style": {
-      "name": "Scandinavian Living Room",
-      "flooring": "Light wooden flooring",
-      "walls": "White or pastel walls",
-      "ceiling": "Simple flat ceiling",
-      "lighting": "Natural light, soft lamps",
-      "furniture": "Light wood sofa, open shelves",
-      "decor": "Minimal natural decor",
-      "prompt_keywords": "scandinavian living room, light wood furniture, natural lighting, pastel walls, cozy and minimal design"
+    "japandi_harmony": {
+      "name": "Japandi Harmony Living Room",
+      "description": "Blending Japanese minimalism with Scandinavian warmth creating balanced, functional elegance",
+      "flooring": "Natural light oak or bamboo flooring with subtle mat accents",
+      "walls": "Soft neutral tones with natural linen or paper-textured wallpaper",
+      "ceiling": "Minimalist flat ceiling with natural wood beams and clean lines",
+      "lighting": "Soft diffused lighting, paper lanterns, warm ambient LED strips, window light",
+      "furniture": "Low-profile wooden sofa, natural wood storage units, woven seating, minimal tables",
+      "decor": "Indoor plants, ikebana-inspired arrangements, natural fiber textiles, zen garden elements",
+      "color_palette": "#F5F1EE, #D4C4B0, #A89B8B, #6B5D52, #8FAA8B",
+      "style_features": "Natural materials, balance, functionality, zen principles, warm neutrals, organic elements",
+      "prompt_keywords": "japandi living room, minimalist design, natural materials, warm neutral tones, zen-inspired, low-profile furniture, serene and balanced"
     },
-    "budget_friendly": {
-      "name": "Budget-Friendly Living Room",
-      "flooring": "Standard vitrified tiles",
-      "walls": "Simple paint finish",
-      "ceiling": "Plain ceiling",
-      "lighting": "LED tube lights",
-      "furniture": "Compact sofa set",
-      "decor": "Basic decor elements",
-      "prompt_keywords": "budget living room, simple furniture, standard tiles, basic lighting, functional and neat design"
+    "steampunk_industrial": {
+      "name": "Steampunk Industrial Living Room",
+      "description": "Futuristic yet vintage aesthetic combining Victorian-era elements with industrial machinery",
+      "flooring": "Polished concrete with metal grating or dark reclaimed wood",
+      "walls": "Exposed brick with metal pipes, gear wall art, or metallic textured panels",
+      "ceiling": "Open beam design with visible ductwork, gears, and industrial fixtures",
+      "lighting": "Brass Edison bulbs, vintage-style industrial chandeliers, neon accent lights",
+      "furniture": "Leather and metal furniture, repurposed machinery pieces, vintage-inspired metal sofa frame",
+      "decor": "Exposed gears, vintage clocks, copper pipes, antique machinery parts, leather accents, industrial signage",
+      "color_palette": "#3A3A3A, #8B7355, #CD853F, #B87333, #704214",
+      "style_features": "Raw metals, vintage machinery, Victorian-industrial blend, functional art, bold textures",
+      "prompt_keywords": "steampunk industrial living room, exposed brick and metal, vintage machinery decor, Edison bulbs, leather furniture, futuristic retro"
+    },
+    "bohemian_wanderlust": {
+      "name": "Bohemian Wanderlust Living Room",
+      "description": "Free-spirited, globally-inspired space celebrating travel, art, and unconventional style",
+      "flooring": "Mixed wooden floors with layered colorful rugs and kilim patterns",
+      "walls": "Warm earthy tones with textured paint, tapestries, and world maps",
+      "ceiling": "Flat ceiling with hanging macramé, dream catchers, and pendant lights",
+      "lighting": "Warm ambient lamps, fairy lights, vintage lanterns, bohemian-style chandeliers",
+      "furniture": "Low wooden seating, floor cushions, rattan chairs, vintage poufs, layered textiles",
+      "decor": "Indoor plants, world artifacts, handwoven textiles, vintage art, travel souvenirs, macramé wall hangings",
+      "color_palette": "#8B4513, #D2691E, #CD853F, #A0522D, #F4A460",
+      "style_features": "Global inspiration, natural materials, mixed textures, artistic expression, wanderlust vibes",
+      "prompt_keywords": "bohemian living room, earthy colors, layered textiles, indoor plants, world artifacts, boho chic, artistic and free-spirited"
+    },
+    "monochromatic_contemporary": {
+      "name": "Monochromatic Contemporary Living Room",
+      "description": "Sophisticated single-color palette creating depth and elegance through texture and material variation",
+      "flooring": "Light grey polished concrete or light oak wood flooring",
+      "walls": "Various shades of grey with textured finishes and subtle pattern play",
+      "ceiling": "Flat minimalist ceiling with grey undertones and integrated lighting",
+      "lighting": "Modern LED lighting system with warm white spectrum, sculptural light fixtures",
+      "furniture": "Grey upholstered sofa, white and grey accent pieces, chrome and steel elements",
+      "decor": "Black and white artwork, monochromatic throw pillows, metallic accents, minimal sculptures",
+      "color_palette": "#FFFFFF, #F5F5F5, #D3D3D3, #A9A9A9, #808080, #000000",
+      "style_features": "Tonal variation, texture emphasis, material contrast, clean lines, sophisticated minimalism",
+      "prompt_keywords": "monochromatic living room, grey palette, texture and depth, contemporary minimalism, sophisticated neutral, clean and elegant"
+    },
+    "tropical_glamour": {
+      "name": "Tropical Glamour Living Room",
+      "description": "Lush, vibrant space merging exotic botanical elements with luxury finishes and bold statement pieces",
+      "flooring": "Natural stone tiles with tropical patterns or light wood with botanical runners",
+      "walls": "Tropical wallpaper with monstera leaves, bright accent wall, or painted jungle scenes",
+      "ceiling": "Flat ceiling with bamboo accents or tropical wood paneling with fan fixtures",
+      "lighting": "Warm overhead lights, statement tropical-themed chandeliers, natural light maximized",
+      "furniture": "Rattan sofa, velvet tropical-colored accent chairs, marble and wood tables",
+      "decor": "Large indoor plants, exotic flowers, woven baskets, tropical artwork, brass and natural fiber accents",
+      "color_palette": "#27AE60, #F39C12, #E74C3C, #3498DB, #8B0000",
+      "style_features": "Lush greenery, bold patterns, natural materials, vibrant colors, exotic elegance",
+      "prompt_keywords": "tropical glamour living room, jungle prints, indoor plants, vibrant colors, rattan furniture, exotic decor, luxurious tropical"
+    },
+    "mid_century_modern": {
+      "name": "Mid-Century Modern Living Room",
+      "description": "Timeless 1950s-60s inspired design emphasizing function, clean lines, and organic forms",
+      "flooring": "Warm wood flooring with geometric or abstract area rugs",
+      "walls": "Soft warm tones, simple geometric wallpaper, or accent walls in mustard or teal",
+      "ceiling": "Low-profile ceiling with warm wood panels and vintage light fixtures",
+      "lighting": "Sputnik chandelier, arc floor lamp, table lamps with tapered legs",
+      "furniture": "Sleek wooden sofa with tapered legs, kidney-shaped coffee table, eames-style chairs",
+      "decor": "Abstract geometric artwork, retro throw pillows, sunburst mirror, brass accessories, vinyl records",
+      "color_palette": "#F4A460, #CD853F, #8B7355, #6B8E23, #20B2AA",
+      "style_features": "Tapered legs, organic curves, warm wood tones, geometric patterns, retro functionality",
+      "prompt_keywords": "mid-century modern living room, tapered legs, geometric patterns, warm wood tones, retro decor, eames furniture, timeless elegance"
+    },
+    "luxury_minimalist": {
+      "name": "Luxury Minimalist Living Room",
+      "description": "High-end sophistication with essential elements, premium materials, and refined restraint",
+      "flooring": "Large-format marble, premium porcelain, or polished concrete with subtle veining",
+      "walls": "Off-white, soft beige, or pale grey with subtle texture and premium finishes",
+      "ceiling": "Minimalist flat ceiling with concealed premium lighting and clean lines",
+      "lighting": "Designer pendant lights, hidden LED strips, warm sophisticated lighting scheme",
+      "furniture": "Premium minimalist sofa in linen or leather, marble or stone coffee table, sleek steel frames",
+      "decor": "Single statement art piece, designer vase, minimal throw pillows, curated accessories",
+      "color_palette": "#FAFAFA, #F0EAE5, #E8E8E8, #C4B5A0, #D2B48C",
+      "style_features": "Premium materials, functional minimalism, subtle luxury, refined elegance, quality over quantity",
+      "prompt_keywords": "luxury minimalist living room, premium materials, marble flooring, refined simplicity, high-end minimal, sophisticated restraint"
+    },
+    "gothic_opulent": {
+      "name": "Gothic Opulent Living Room",
+      "description": "Moody, dramatic space with dark elegance, ornate details, and theatrical sophistication",
+      "flooring": "Dark hardwood with ornate area rug or black marble with brass inlays",
+      "walls": "Deep burgundy, charcoal, or black velvet walls with ornate wallpaper and details",
+      "ceiling": "Dark ceiling with elaborate crown molding, ornate chandelier, and dramatic finishes",
+      "lighting": "Grand chandelier, ornate wall sconces, candlelit ambiance, moody accent lighting",
+      "furniture": "Velvet upholstered sofa, ornate wooden furniture, leather seating, damask patterns",
+      "decor": "Ornate mirrors with gold frames, gothic artwork, candelabras, velvet cushions, dark sculptural pieces",
+      "color_palette": "#1A0033, #2F2F2F, #8B0000, #DAA520, #F5DEB3",
+      "style_features": "Deep colors, ornate details, theatrical atmosphere, luxury textures, dramatic elegance",
+      "prompt_keywords": "gothic living room, dark and dramatic, burgundy and black, ornate details, moody atmosphere, theatrical design, sophisticated gothic"
     }
   }
 }

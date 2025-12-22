@@ -1,0 +1,137 @@
+{
+  "executive_office": {
+    "room_name": "Executive Office (Commercial)",
+    "designs": [
+      {
+        "style_id": "corporate_luxury",
+        "name": "Corporate Luxury Executive Office",
+        "description": "Premium executive office reflecting authority, elegance, and success",
+        "flooring": "Polished marble or premium wooden flooring",
+        "walls": "Textured wall panels with veneer and accent lighting",
+        "ceiling": "Designer false ceiling with cove lighting",
+        "lighting": "Warm ambient lighting, designer table lamp",
+        "furniture": "Executive desk, leather chair, visitor chairs, credenza",
+        "decor": "Statement artwork, premium accessories",
+        "color_palette": ["#2F2F2F", "#C2A878", "#F5F5F5", "#6D6875", "#000000"],
+        "prompt_keywords": "luxury executive office, premium corporate cabin, leadership workspace"
+      },
+      {
+        "style_id": "modern_executive",
+        "name": "Modern Executive Office",
+        "description": "Sleek, contemporary office with clean lines and professional appeal",
+        "flooring": "Engineered wooden flooring",
+        "walls": "Neutral walls with glass partitions",
+        "ceiling": "Minimal false ceiling",
+        "lighting": "Neutral LED lighting",
+        "furniture": "Minimal executive desk, ergonomic chair, storage units",
+        "decor": "Minimal art, subtle branding",
+        "color_palette": ["#FFFFFF", "#E5E7EB", "#9CA3AF", "#1F2933", "#2563EB"],
+        "prompt_keywords": "modern executive office, clean corporate cabin"
+      },
+      {
+        "style_id": "classic_traditional",
+        "name": "Classic Traditional Executive Office",
+        "description": "Timeless executive office inspired by traditional leadership spaces",
+        "flooring": "Dark wooden flooring with rug",
+        "walls": "Wood-paneled walls with classic detailing",
+        "ceiling": "Decorative ceiling with cornices",
+        "lighting": "Classic table lamps, chandelier",
+        "furniture": "Large wooden desk, leather chair, bookshelf",
+        "decor": "Books, globes, framed portraits",
+        "color_palette": ["#4E342E", "#8D6E63", "#D7CCC8", "#F5F5F5", "#000000"],
+        "prompt_keywords": "classic executive office, traditional corporate cabin"
+      },
+      {
+        "style_id": "glass_cabin",
+        "name": "Glass Cabin Executive Office",
+        "description": "Transparent executive cabin promoting openness and modern leadership",
+        "flooring": "Carpet tiles or wood flooring",
+        "walls": "Full-height glass partitions",
+        "ceiling": "Open ceiling with acoustic panels",
+        "lighting": "Linear LED lighting",
+        "furniture": "Sleek desk, ergonomic chair, meeting table",
+        "decor": "Minimal branding, plants",
+        "color_palette": ["#F8FAFC", "#CBD5E1", "#1E293B", "#38BDF8", "#000000"],
+        "prompt_keywords": "glass cabin executive office, transparent leadership space"
+      },
+      {
+        "style_id": "industrial_executive",
+        "name": "Industrial Executive Office",
+        "description": "Bold executive office with industrial character and authority",
+        "flooring": "Concrete or dark epoxy flooring",
+        "walls": "Exposed brick or concrete finish",
+        "ceiling": "Exposed beams and ducts",
+        "lighting": "Industrial pendant and task lights",
+        "furniture": "Metal-wood executive desk, leather chair",
+        "decor": "Metal accents, vintage decor",
+        "color_palette": ["#2E2E2E", "#5A5A5A", "#8B7355", "#D1D5DB", "#000000"],
+        "prompt_keywords": "industrial executive office, bold corporate cabin"
+      },
+      {
+        "style_id": "minimal_power",
+        "name": "Minimal Power Executive Office",
+        "description": "Minimalist executive office emphasizing clarity and control",
+        "flooring": "Neutral carpet or light wood",
+        "walls": "Plain white and grey walls",
+        "ceiling": "Flat ceiling with recessed lights",
+        "lighting": "Neutral LED lighting",
+        "furniture": "Minimal executive desk, ergonomic chair",
+        "decor": "Single statement piece",
+        "color_palette": ["#FFFFFF", "#E0E0E0", "#9E9E9E", "#616161", "#000000"],
+        "prompt_keywords": "minimal executive office, powerful clean workspace"
+      },
+      {
+        "style_id": "biophilic_leader",
+        "name": "Biophilic Executive Office",
+        "description": "Nature-inspired executive office promoting calm leadership",
+        "flooring": "Natural wood flooring",
+        "walls": "Earth-tone walls with green accents",
+        "ceiling": "Wood-accent ceiling",
+        "lighting": "Daylight-balanced lighting",
+        "furniture": "Wooden desk, ergonomic chair",
+        "decor": "Indoor plants, natural textures",
+        "color_palette": ["#DAD7CD", "#A3B18A", "#588157", "#3A5A40", "#000000"],
+        "prompt_keywords": "biophilic executive office, nature inspired leadership space"
+      },
+      {
+        "style_id": "tech_smart_executive",
+        "name": "Tech-Smart Executive Office",
+        "description": "High-tech executive office with smart automation and controls",
+        "flooring": "Polished concrete or smart wood flooring",
+        "walls": "Matte walls with integrated smart panels",
+        "ceiling": "Smart lighting ceiling",
+        "lighting": "Automated LED lighting",
+        "furniture": "Motorized desk, smart chair",
+        "decor": "Smart displays, minimal tech decor",
+        "color_palette": ["#FFFFFF", "#E5E7EB", "#3B82F6", "#6B7280", "#000000"],
+        "prompt_keywords": "smart executive office, automated corporate cabin"
+      },
+      {
+        "style_id": "executive_meeting_focus",
+        "name": "Executive Office with Meeting Focus",
+        "description": "Executive cabin designed for leadership meetings and discussions",
+        "flooring": "Premium carpet tiles",
+        "walls": "Textured walls with acoustic panels",
+        "ceiling": "False ceiling with ambient lighting",
+        "lighting": "Warm lighting with spotlight zones",
+        "furniture": "Executive desk, meeting table, visitor chairs",
+        "decor": "Corporate branding, art",
+        "color_palette": ["#F1F5F9", "#CBD5E1", "#64748B", "#1E293B", "#000000"],
+        "prompt_keywords": "executive office meeting room, leadership discussion space"
+      },
+      {
+        "style_id": "cost_effective_executive",
+        "name": "Cost-Effective Executive Office",
+        "description": "Functional executive office balancing budget and authority",
+        "flooring": "Laminate or vinyl flooring",
+        "walls": "Painted neutral walls",
+        "ceiling": "Flat ceiling",
+        "lighting": "Standard LED lighting",
+        "furniture": "Modular executive desk, storage unit",
+        "decor": "Simple branding",
+        "color_palette": ["#FFFFFF", "#F1F1F1", "#CFCFCF", "#A8A8A8", "#000000"],
+        "prompt_keywords": "budget executive office, functional corporate cabin"
+      }
+    ]
+  }
+}

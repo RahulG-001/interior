@@ -1,0 +1,137 @@
+{
+  "master_bedroom": {
+    "room_name": "Master Bedroom",
+    "designs": [
+      {
+        "style_id": "industrial_chic",
+        "name": "Industrial Chic Master Bedroom",
+        "description": "Bold, raw luxury with exposed materials and urban sophistication",
+        "flooring": "Polished concrete or dark industrial wood",
+        "walls": "Exposed brick with matte charcoal accents",
+        "ceiling": "Exposed beams and metal duct elements",
+        "lighting": "Edison bulbs, black metal pendants, track lighting",
+        "furniture": "Metal frame king bed, leather lounge chair, steel side tables",
+        "decor": "Vintage industrial art, metal sculptures, distressed textures",
+        "color_palette": ["#3A3A3A", "#8B7355", "#CD853F", "#D3D3D3"],
+        "prompt_keywords": "industrial chic master bedroom, exposed brick, metal accents, raw luxury"
+      },
+      {
+        "style_id": "japandi_fusion",
+        "name": "Japandi Fusion Master Bedroom",
+        "description": "Calm, balanced space combining Japanese minimalism and Scandinavian warmth",
+        "flooring": "Light oak or bamboo wood flooring",
+        "walls": "Soft beige and linen-textured finishes",
+        "ceiling": "Minimal flat ceiling with wooden beams",
+        "lighting": "Paper lanterns, warm LED strips",
+        "furniture": "Low platform bed, solid wood side tables, minimalist wardrobe",
+        "decor": "Indoor plants, ceramic vases, neutral textiles",
+        "color_palette": ["#F5F1EE", "#D4C4B0", "#A89B8B", "#6B5D52"],
+        "prompt_keywords": "japandi master bedroom, zen minimalism, warm wood tones"
+      },
+      {
+        "style_id": "maximalist_bold",
+        "name": "Maximalist Bold Master Bedroom",
+        "description": "Expressive, artistic bedroom rich in color, pattern, and personality",
+        "flooring": "Patterned tiles or plush geometric carpet",
+        "walls": "Jewel-tone walls with bold wallpaper",
+        "ceiling": "Statement ceiling with rich colors",
+        "lighting": "Decorative chandelier, layered ambient lights",
+        "furniture": "Ornate bed frame, colorful lounge seating",
+        "decor": "Gallery art wall, layered rugs, sculptural decor",
+        "color_palette": ["#FF6B6B", "#4ECDC4", "#FFE66D", "#95E1D3", "#6C5CE7"],
+        "prompt_keywords": "maximalist master bedroom, bold colors, artistic luxury"
+      },
+      {
+        "style_id": "coastal_serene",
+        "name": "Coastal Serene Master Bedroom",
+        "description": "Relaxing beach-inspired retreat with light textures and airy comfort",
+        "flooring": "Whitewashed wooden flooring",
+        "walls": "Soft whites and ocean blues",
+        "ceiling": "Light plaster ceiling",
+        "lighting": "Rattan pendants, soft daylight lighting",
+        "furniture": "Wooden bed, upholstered armchair, driftwood side tables",
+        "decor": "Seashell accents, coastal art, linen curtains",
+        "color_palette": ["#FFFFFF", "#87CEEB", "#F0E68C", "#DEB887", "#20B2AA"],
+        "prompt_keywords": "coastal master bedroom, beach-inspired, light and airy"
+      },
+      {
+        "style_id": "art_deco_glamour",
+        "name": "Art Deco Glamour Master Bedroom",
+        "description": "Luxurious 1920s-inspired bedroom with geometric elegance",
+        "flooring": "Chevron wooden parquet or black marble",
+        "walls": "Deep jewel tones with gold detailing",
+        "ceiling": "Coffered ceiling with metallic accents",
+        "lighting": "Brass chandelier, geometric sconces",
+        "furniture": "Velvet upholstered bed, mirrored nightstands",
+        "decor": "Geometric mirrors, marble accessories",
+        "color_palette": ["#1A1A1A", "#2D5016", "#D4AF37", "#F4E4C1", "#8B0000"],
+        "prompt_keywords": "art deco master bedroom, glamorous luxury, gold accents"
+      },
+      {
+        "style_id": "rustic_farmhouse",
+        "name": "Rustic Farmhouse Master Bedroom",
+        "description": "Warm, cozy country-style bedroom with natural charm",
+        "flooring": "Reclaimed wooden planks",
+        "walls": "White shiplap or soft earth tones",
+        "ceiling": "Exposed wooden beams",
+        "lighting": "Vintage lantern lights",
+        "furniture": "Solid wood bed, farmhouse dresser",
+        "decor": "Vintage quilts, rustic accessories",
+        "color_palette": ["#FFFFFF", "#8B7355", "#A0826D", "#D2B48C", "#FFFACD"],
+        "prompt_keywords": "rustic farmhouse master bedroom, warm country style"
+      },
+      {
+        "style_id": "modern_tech_smart",
+        "name": "Modern Tech-Smart Master Bedroom",
+        "description": "Sleek, contemporary bedroom integrated with smart technology",
+        "flooring": "Polished concrete or smart wood flooring",
+        "walls": "Matte black and white with smart panels",
+        "ceiling": "Hidden lighting ceiling with automation",
+        "lighting": "Smart RGB LED system",
+        "furniture": "Smart adjustable bed, tech wardrobe",
+        "decor": "Smart mirror, digital art panels",
+        "color_palette": ["#000000", "#FFFFFF", "#1E90FF", "#C0C0C0", "#404040"],
+        "prompt_keywords": "smart master bedroom, modern tech luxury"
+      },
+      {
+        "style_id": "tropical_paradise",
+        "name": "Tropical Paradise Master Bedroom",
+        "description": "Lush nature-inspired bedroom with resort-style comfort",
+        "flooring": "Natural stone or light wood",
+        "walls": "Tropical wallpaper or greenery accents",
+        "ceiling": "Bamboo-accent ceiling",
+        "lighting": "Warm ambient lighting",
+        "furniture": "Rattan bed, wooden side tables",
+        "decor": "Indoor plants, woven decor",
+        "color_palette": ["#27AE60", "#F39C12", "#E74C3C", "#3498DB", "#2C3E50"],
+        "prompt_keywords": "tropical master bedroom, resort style, lush greenery"
+      },
+      {
+        "style_id": "minimalist_zen",
+        "name": "Minimalist Zen Master Bedroom",
+        "description": "Peaceful, clutter-free bedroom focused on balance and simplicity",
+        "flooring": "Light bamboo flooring",
+        "walls": "Soft off-white tones",
+        "ceiling": "Simple flat ceiling",
+        "lighting": "Warm soft LED lighting",
+        "furniture": "Low platform bed, minimal storage",
+        "decor": "Single art piece, meditation corner",
+        "color_palette": ["#F5F5F5", "#E8E8E8", "#BEBEBE", "#C4B5A0", "#9CAF88"],
+        "prompt_keywords": "minimalist zen master bedroom, calm neutral design"
+      },
+      {
+        "style_id": "gothic_dramatic",
+        "name": "Gothic Dramatic Master Bedroom",
+        "description": "Dark, dramatic luxury bedroom with theatrical elegance",
+        "flooring": "Dark hardwood or black marble",
+        "walls": "Burgundy and charcoal velvet textures",
+        "ceiling": "Dark ceiling with ornate molding",
+        "lighting": "Ornate chandelier, moody sconces",
+        "furniture": "Canopy bed, carved wooden furniture",
+        "decor": "Gothic mirrors, velvet cushions",
+        "color_palette": ["#1A0033", "#2F2F2F", "#8B0000", "#DAA520", "#F5DEB3"],
+        "prompt_keywords": "gothic master bedroom, dark luxury, dramatic elegance"
+      }
+    ]
+  }
+}

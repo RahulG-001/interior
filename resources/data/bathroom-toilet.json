@@ -1,0 +1,137 @@
+{
+  "bathroom_toilet": {
+    "room_name": "Bathroom / Toilet",
+    "designs": [
+      {
+        "style_id": "luxury_spa",
+        "name": "Luxury Spa Bathroom",
+        "description": "Relaxing spa-inspired bathroom with premium finishes and calm ambiance",
+        "flooring": "Anti-skid marble tiles",
+        "walls": "Large format marble tiles with subtle veining",
+        "ceiling": "Moisture-resistant false ceiling with cove lighting",
+        "lighting": "Warm LED mirror lights, recessed spotlights",
+        "fixtures": "Floating vanity, wall-mounted WC, glass shower enclosure",
+        "decor": "Indoor plants, candles, stone trays, plush towels",
+        "color_palette": ["#FFFFFF", "#E0E0E0", "#C9B79C", "#A89F91", "#000000"],
+        "prompt_keywords": "luxury spa bathroom, marble bathroom, relaxing modern toilet"
+      },
+      {
+        "style_id": "modern_minimal",
+        "name": "Modern Minimal Bathroom",
+        "description": "Clean, clutter-free bathroom with sharp modern aesthetics",
+        "flooring": "Matte porcelain tiles",
+        "walls": "Plain light grey tiles",
+        "ceiling": "Flat ceiling with minimal fixtures",
+        "lighting": "Bright white LED lighting",
+        "fixtures": "Wall-hung WC, sleek vanity, concealed storage",
+        "decor": "Minimal accessories, frameless mirror",
+        "color_palette": ["#F5F5F5", "#E0E0E0", "#BDBDBD", "#9E9E9E", "#FFFFFF"],
+        "prompt_keywords": "modern minimal bathroom, clean toilet design, simple interiors"
+      },
+      {
+        "style_id": "hotel_style",
+        "name": "Hotel Style Bathroom",
+        "description": "Elegant hotel-inspired bathroom offering premium guest comfort",
+        "flooring": "Polished ceramic tiles",
+        "walls": "Textured neutral tiles",
+        "ceiling": "False ceiling with warm ambient lights",
+        "lighting": "Warm spotlights, backlit mirror",
+        "fixtures": "Countertop basin, vanity unit, wall-mounted WC",
+        "decor": "Rolled towels, tray accessories, framed mirror",
+        "color_palette": ["#EFE6D8", "#D6CCC2", "#B08968", "#7F5539", "#FFFFFF"],
+        "prompt_keywords": "hotel style bathroom, luxury toilet interiors, elegant design"
+      },
+      {
+        "style_id": "industrial_modern",
+        "name": "Industrial Modern Bathroom",
+        "description": "Bold industrial bathroom with raw textures and urban appeal",
+        "flooring": "Concrete-finish tiles",
+        "walls": "Grey textured tiles with black accents",
+        "ceiling": "Exposed-style ceiling with black fittings",
+        "lighting": "Warm industrial pendant lights",
+        "fixtures": "Black metal fixtures, floating concrete vanity",
+        "decor": "Metal accessories, minimal plants",
+        "color_palette": ["#2E2E2E", "#5A5A5A", "#8B7355", "#CFCFCF", "#000000"],
+        "prompt_keywords": "industrial bathroom, concrete toilet design, urban modern"
+      },
+      {
+        "style_id": "nature_organic",
+        "name": "Nature Organic Bathroom",
+        "description": "Earthy bathroom inspired by natural materials and calm tones",
+        "flooring": "Stone-textured anti-skid tiles",
+        "walls": "Natural stone or wood-finish tiles",
+        "ceiling": "Wood-accent ceiling panels",
+        "lighting": "Warm diffused lighting",
+        "fixtures": "Wooden vanity, ceramic basin, wall WC",
+        "decor": "Plants, stone accessories, woven baskets",
+        "color_palette": ["#DAD7CD", "#A3B18A", "#588157", "#3A5A40", "#FFFFFF"],
+        "prompt_keywords": "nature bathroom, organic toilet design, earthy interiors"
+      },
+      {
+        "style_id": "monochrome_chic",
+        "name": "Monochrome Chic Bathroom",
+        "description": "Stylish black-and-white bathroom with timeless elegance",
+        "flooring": "Black and white patterned tiles",
+        "walls": "Glossy white tiles with black accents",
+        "ceiling": "Simple ceiling with recessed lights",
+        "lighting": "Neutral LED lighting",
+        "fixtures": "White vanity, black fixtures, wall WC",
+        "decor": "Minimal decor, geometric accessories",
+        "color_palette": ["#000000", "#FFFFFF", "#BDBDBD", "#757575", "#E0E0E0"],
+        "prompt_keywords": "monochrome bathroom, black white toilet design, chic style"
+      },
+      {
+        "style_id": "coastal_fresh",
+        "name": "Coastal Fresh Bathroom",
+        "description": "Light and breezy bathroom inspired by seaside living",
+        "flooring": "Light sand-tone tiles",
+        "walls": "White and soft blue tiles",
+        "ceiling": "White ceiling with simple moldings",
+        "lighting": "Soft natural-style lighting",
+        "fixtures": "White vanity, round mirror, wall-mounted WC",
+        "decor": "Seashell decor, light textiles",
+        "color_palette": ["#FFFFFF", "#BEE9E8", "#62B6CB", "#CAE9FF", "#1B4965"],
+        "prompt_keywords": "coastal bathroom, beach style toilet, fresh light interiors"
+      },
+      {
+        "style_id": "luxury_dark",
+        "name": "Luxury Dark Bathroom",
+        "description": "Dramatic and premium bathroom with dark luxury finishes",
+        "flooring": "Dark marble tiles",
+        "walls": "Charcoal stone tiles with metallic accents",
+        "ceiling": "Dark ceiling with warm spotlights",
+        "lighting": "Warm accent lighting, LED mirror",
+        "fixtures": "Matte black fixtures, floating vanity",
+        "decor": "Metallic accessories, minimal art",
+        "color_palette": ["#1C1C1C", "#2F2F2F", "#8B0000", "#DAA520", "#FFFFFF"],
+        "prompt_keywords": "luxury dark bathroom, dramatic toilet design, premium interiors"
+      },
+      {
+        "style_id": "family_functional",
+        "name": "Family Functional Bathroom",
+        "description": "Practical bathroom designed for daily family use",
+        "flooring": "Anti-skid ceramic tiles",
+        "walls": "Easy-clean neutral tiles",
+        "ceiling": "Flat ceiling",
+        "lighting": "Bright LED ceiling lights",
+        "fixtures": "Storage vanity, wall WC, shower area",
+        "decor": "Functional shelves, simple accessories",
+        "color_palette": ["#FFFFFF", "#F1F1F1", "#CFCFCF", "#A8A8A8", "#000000"],
+        "prompt_keywords": "family bathroom, functional toilet design, practical interiors"
+      },
+      {
+        "style_id": "compact_space",
+        "name": "Compact Space-Saving Bathroom",
+        "description": "Efficient bathroom design optimized for small spaces",
+        "flooring": "Small-format anti-skid tiles",
+        "walls": "Light-colored glossy tiles",
+        "ceiling": "Flat ceiling with bright lights",
+        "lighting": "Bright white LED lighting",
+        "fixtures": "Corner vanity, wall WC, compact storage",
+        "decor": "Minimal accessories, large mirror",
+        "color_palette": ["#FFFFFF", "#EEEEEE", "#CCCCCC", "#999999", "#000000"],
+        "prompt_keywords": "small bathroom design, compact toilet interiors, space saving"
+      }
+    ]
+  }
+}

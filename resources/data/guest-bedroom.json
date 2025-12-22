@@ -1,0 +1,137 @@
+{
+  "guest_bedroom": {
+    "room_name": "Guest Bedroom",
+    "designs": [
+      {
+        "style_id": "hotel_luxury",
+        "name": "Hotel Luxury Guest Bedroom",
+        "description": "Elegant hotel-style bedroom offering comfort and refined luxury for guests",
+        "flooring": "Engineered wooden flooring with soft area rug",
+        "walls": "Neutral beige walls with upholstered accent panel",
+        "ceiling": "Simple false ceiling with warm cove lighting",
+        "lighting": "Bedside lamps, recessed ceiling lights",
+        "furniture": "Queen size bed, bedside tables, wardrobe, luggage bench",
+        "decor": "Abstract artwork, premium bedding, decorative cushions",
+        "color_palette": ["#EAE7DC", "#D8CFC4", "#B7A99A", "#8D7B68", "#FFFFFF"],
+        "prompt_keywords": "hotel style guest bedroom, luxury neutral interiors, elegant comfort"
+      },
+      {
+        "style_id": "modern_minimal",
+        "name": "Modern Minimal Guest Bedroom",
+        "description": "Clean, clutter-free bedroom designed for calm and relaxation",
+        "flooring": "Light wood flooring",
+        "walls": "Soft grey and off-white walls",
+        "ceiling": "Flat ceiling with minimal fixtures",
+        "lighting": "Warm LED ceiling lights, bedside sconces",
+        "furniture": "Platform bed, slim bedside tables, compact wardrobe",
+        "decor": "Single art piece, minimal cushions, light curtains",
+        "color_palette": ["#F5F5F5", "#E0E0E0", "#BDBDBD", "#9E9E9E", "#FFFFFF"],
+        "prompt_keywords": "modern minimal guest bedroom, clean simple design, peaceful space"
+      },
+      {
+        "style_id": "cozy_scandinavian",
+        "name": "Cozy Scandinavian Guest Bedroom",
+        "description": "Warm and welcoming bedroom with Scandinavian simplicity",
+        "flooring": "Natural oak wood flooring",
+        "walls": "Soft white walls with wood accents",
+        "ceiling": "Flat ceiling with wooden beams",
+        "lighting": "Warm pendant lights, table lamps",
+        "furniture": "Wooden bed, side tables, storage bench",
+        "decor": "Textured throws, indoor plants, framed prints",
+        "color_palette": ["#FFFFFF", "#DAD7CD", "#A3B18A", "#588157", "#344E41"],
+        "prompt_keywords": "scandinavian guest bedroom, cozy natural interiors, warm minimal"
+      },
+      {
+        "style_id": "classic_traditional",
+        "name": "Classic Traditional Guest Bedroom",
+        "description": "Timeless and elegant bedroom with classic detailing",
+        "flooring": "Polished wooden flooring",
+        "walls": "Soft cream walls with classic moldings",
+        "ceiling": "Decorative ceiling with subtle cornices",
+        "lighting": "Classic table lamps, chandelier",
+        "furniture": "Wooden bed, carved bedside tables, wardrobe",
+        "decor": "Traditional artwork, table lamps, patterned cushions",
+        "color_palette": ["#F8F1E4", "#E6D3A3", "#C2A878", "#8B6F47", "#FFFFFF"],
+        "prompt_keywords": "classic guest bedroom, traditional interiors, elegant timeless design"
+      },
+      {
+        "style_id": "boho_relaxed",
+        "name": "Boho Relaxed Guest Bedroom",
+        "description": "Casual and artistic bedroom with bohemian charm",
+        "flooring": "Wooden flooring with patterned rugs",
+        "walls": "Neutral walls with boho wall hangings",
+        "ceiling": "Simple ceiling with woven pendant light",
+        "lighting": "Warm ambient lighting",
+        "furniture": "Low bed, wooden side tables, open wardrobe",
+        "decor": "Macrame, cushions, indoor plants",
+        "color_palette": ["#EDE0D4", "#DDB892", "#B08968", "#7F5539", "#FFFFFF"],
+        "prompt_keywords": "boho guest bedroom, relaxed artistic interiors, casual comfort"
+      },
+      {
+        "style_id": "urban_modern",
+        "name": "Urban Modern Guest Bedroom",
+        "description": "Sleek urban-style bedroom with contemporary appeal",
+        "flooring": "Dark wood or concrete finish flooring",
+        "walls": "Grey tones with textured accent wall",
+        "ceiling": "Flat ceiling with recessed lighting",
+        "lighting": "Track lights, bedside lamps",
+        "furniture": "Queen bed, metal side tables, sliding wardrobe",
+        "decor": "Minimal art, geometric decor",
+        "color_palette": ["#2F3E46", "#354F52", "#52796F", "#CAD2C5", "#FFFFFF"],
+        "prompt_keywords": "urban modern guest bedroom, contemporary city style"
+      },
+      {
+        "style_id": "coastal_light",
+        "name": "Coastal Light Guest Bedroom",
+        "description": "Fresh and breezy bedroom inspired by coastal living",
+        "flooring": "Whitewashed wood flooring",
+        "walls": "White and light blue walls",
+        "ceiling": "Light ceiling with simple moldings",
+        "lighting": "Natural light, rattan pendants",
+        "furniture": "Wooden bed, light wardrobe, side tables",
+        "decor": "Coastal artwork, linen textiles",
+        "color_palette": ["#FFFFFF", "#BEE9E8", "#62B6CB", "#CAE9FF", "#1B4965"],
+        "prompt_keywords": "coastal guest bedroom, light airy interiors, beach-inspired"
+      },
+      {
+        "style_id": "luxury_contemporary",
+        "name": "Luxury Contemporary Guest Bedroom",
+        "description": "Premium modern bedroom with elegant finishes",
+        "flooring": "Engineered wood with area rug",
+        "walls": "Textured neutral walls with accent panels",
+        "ceiling": "False ceiling with ambient lighting",
+        "lighting": "Warm recessed lights, designer lamps",
+        "furniture": "Upholstered bed, sleek side tables",
+        "decor": "Statement art, luxury bedding",
+        "color_palette": ["#EFEFEF", "#D6D6D6", "#B1A7A6", "#6D6875", "#FFFFFF"],
+        "prompt_keywords": "luxury contemporary guest bedroom, modern premium design"
+      },
+      {
+        "style_id": "nature_organic",
+        "name": "Nature Organic Guest Bedroom",
+        "description": "Natural, calming bedroom inspired by organic materials",
+        "flooring": "Natural wood flooring",
+        "walls": "Earth-tone textured walls",
+        "ceiling": "Simple ceiling with wooden accents",
+        "lighting": "Soft warm lights",
+        "furniture": "Solid wood bed, side tables",
+        "decor": "Plants, clay decor, linen fabrics",
+        "color_palette": ["#DAD7CD", "#A3B18A", "#588157", "#3A5A40", "#FFFFFF"],
+        "prompt_keywords": "nature inspired guest bedroom, organic interiors, calming space"
+      },
+      {
+        "style_id": "compact_functional",
+        "name": "Compact Functional Guest Bedroom",
+        "description": "Space-efficient design focused on comfort and usability",
+        "flooring": "Laminate flooring",
+        "walls": "Light neutral walls",
+        "ceiling": "Flat ceiling",
+        "lighting": "Bright LED ceiling lights",
+        "furniture": "Storage bed, foldable desk, compact wardrobe",
+        "decor": "Minimal wall art, functional accessories",
+        "color_palette": ["#FFFFFF", "#F1F1F1", "#CFCFCF", "#A8A8A8", "#000000"],
+        "prompt_keywords": "compact guest bedroom, small space design, functional interiors"
+      }
+    ]
+  }
+}
