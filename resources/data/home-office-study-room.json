@@ -1,0 +1,137 @@
+{
+  "home_office_study_room": {
+    "room_name": "Home Office / Study Room",
+    "designs": [
+      {
+        "style_id": "modern_productive",
+        "name": "Modern Productive Home Office",
+        "description": "Clean and focused workspace designed for maximum productivity",
+        "flooring": "Wooden or laminate flooring with desk mat",
+        "walls": "Light grey walls with acoustic panels",
+        "ceiling": "Flat ceiling with recessed lighting",
+        "lighting": "Task desk lamp, neutral LED ceiling lights",
+        "furniture": "Ergonomic work desk, adjustable chair, storage cabinet",
+        "decor": "Minimal wall art, indoor plant, cable management",
+        "color_palette": ["#FFFFFF", "#E0E0E0", "#90CAF9", "#455A64", "#000000"],
+        "prompt_keywords": "modern home office, productive study room, clean workspace"
+      },
+      {
+        "style_id": "executive_luxury",
+        "name": "Executive Luxury Study",
+        "description": "Premium executive-style office with rich materials and elegance",
+        "flooring": "Dark wooden flooring with rug",
+        "walls": "Wood-paneled walls with leather accents",
+        "ceiling": "Decorative ceiling with warm lighting",
+        "lighting": "Designer table lamp, ambient lights",
+        "furniture": "Executive desk, leather chair, bookshelf",
+        "decor": "Framed art, desk accessories, statement clock",
+        "color_palette": ["#2F2F2F", "#5C4033", "#C2A878", "#F5F5F5", "#000000"],
+        "prompt_keywords": "executive home office, luxury study room, premium workspace"
+      },
+      {
+        "style_id": "minimal_scandinavian",
+        "name": "Minimal Scandinavian Study",
+        "description": "Bright, clutter-free study with Scandinavian simplicity",
+        "flooring": "Light oak wood flooring",
+        "walls": "White walls with soft wood accents",
+        "ceiling": "Flat ceiling with minimal fixtures",
+        "lighting": "Natural light, soft pendant light",
+        "furniture": "Simple desk, wooden chair, open shelves",
+        "decor": "Indoor plants, minimal frames",
+        "color_palette": ["#FFFFFF", "#DAD7CD", "#A3B18A", "#588157", "#000000"],
+        "prompt_keywords": "scandinavian study room, minimal home office, light interiors"
+      },
+      {
+        "style_id": "industrial_creative",
+        "name": "Industrial Creative Workspace",
+        "description": "Urban industrial workspace designed for creative thinking",
+        "flooring": "Concrete or dark laminate flooring",
+        "walls": "Exposed brick or textured concrete walls",
+        "ceiling": "Exposed beams and ducts",
+        "lighting": "Track lighting, industrial desk lamp",
+        "furniture": "Metal desk, ergonomic chair, storage racks",
+        "decor": "Metal art, pin boards, vintage accessories",
+        "color_palette": ["#2E2E2E", "#5A5A5A", "#8B7355", "#CFCFCF", "#000000"],
+        "prompt_keywords": "industrial home office, creative workspace, urban study"
+      },
+      {
+        "style_id": "library_classic",
+        "name": "Classic Library Study",
+        "description": "Traditional study inspired by old-world libraries",
+        "flooring": "Polished wooden flooring",
+        "walls": "Wood-paneled walls with bookshelves",
+        "ceiling": "Decorative ceiling with classic moldings",
+        "lighting": "Table lamps, chandelier",
+        "furniture": "Classic writing desk, armchair, bookshelf",
+        "decor": "Books, globes, framed portraits",
+        "color_palette": ["#4E342E", "#8D6E63", "#D7CCC8", "#F5F5F5", "#000000"],
+        "prompt_keywords": "classic library study, traditional home office, timeless design"
+      },
+      {
+        "style_id": "tech_smart",
+        "name": "Tech-Smart Home Office",
+        "description": "High-tech study with smart systems and automation",
+        "flooring": "Polished concrete or smart wood flooring",
+        "walls": "Matte white and grey walls with smart panels",
+        "ceiling": "Smart lighting ceiling",
+        "lighting": "Smart LED lighting with automation",
+        "furniture": "Motorized desk, ergonomic chair, cable-managed storage",
+        "decor": "Smart displays, minimal tech decor",
+        "color_palette": ["#FFFFFF", "#E5E7EB", "#3B82F6", "#6B7280", "#000000"],
+        "prompt_keywords": "smart home office, tech study room, automated workspace"
+      },
+      {
+        "style_id": "creative_art",
+        "name": "Creative Art Studio Study",
+        "description": "Art-focused workspace encouraging creativity and expression",
+        "flooring": "Easy-clean laminate flooring",
+        "walls": "White walls with pin-up boards",
+        "ceiling": "Flat ceiling with adjustable lights",
+        "lighting": "Directional spotlights, desk lamp",
+        "furniture": "Large work table, storage drawers, stool",
+        "decor": "Art supplies, framed sketches",
+        "color_palette": ["#FFB703", "#FB8500", "#219EBC", "#8ECAE6", "#FFFFFF"],
+        "prompt_keywords": "creative study room, art workspace, design studio"
+      },
+      {
+        "style_id": "zen_focus",
+        "name": "Zen Focus Study Room",
+        "description": "Calm and distraction-free study inspired by zen principles",
+        "flooring": "Bamboo or light wood flooring",
+        "walls": "Soft beige or sage green walls",
+        "ceiling": "Simple flat ceiling",
+        "lighting": "Warm ambient lighting",
+        "furniture": "Minimal desk, floor seating option",
+        "decor": "Single plant, meditation decor",
+        "color_palette": ["#F5F1EE", "#D6CFC4", "#A89B8B", "#7A6F65", "#000000"],
+        "prompt_keywords": "zen study room, calm home office, focused workspace"
+      },
+      {
+        "style_id": "compact_multifunction",
+        "name": "Compact Multifunction Study",
+        "description": "Space-saving study suitable for small homes",
+        "flooring": "Laminate flooring",
+        "walls": "Light neutral walls",
+        "ceiling": "Flat ceiling",
+        "lighting": "Bright LED lighting",
+        "furniture": "Foldable desk, wall shelves, storage chair",
+        "decor": "Functional accessories",
+        "color_palette": ["#FFFFFF", "#EEEEEE", "#CCCCCC", "#999999", "#000000"],
+        "prompt_keywords": "small home office, compact study room, space saving design"
+      },
+      {
+        "style_id": "nature_biophilic",
+        "name": "Nature Biophilic Study",
+        "description": "Nature-connected study promoting wellness and productivity",
+        "flooring": "Natural wood flooring",
+        "walls": "Earth-tone walls with green accents",
+        "ceiling": "Wood-accent ceiling",
+        "lighting": "Natural daylight, warm LEDs",
+        "furniture": "Wooden desk, ergonomic chair",
+        "decor": "Indoor plants, natural textures",
+        "color_palette": ["#DAD7CD", "#A3B18A", "#588157", "#3A5A40", "#000000"],
+        "prompt_keywords": "biophilic home office, nature inspired study, green workspace"
+      }
+    ]
+  }
+}

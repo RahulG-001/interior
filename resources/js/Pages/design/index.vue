@@ -25,78 +25,343 @@
         </button>
       </div>
 
-      <!-- Room Type Dropdown -->
+      <!-- Space Type Dropdown -->
       <div class="room-type-section">
+        <label>Space Type</label>
+        <select v-model="selectedSpaceType" class="room-dropdown">
+          <option value="residential">Residential</option>
+          <option value="commercial">Commercial</option>
+        </select>
+      </div>
+
+      <!-- Room Type Dropdown -->
+      <div v-if="selectedSpaceType" class="room-type-section">
         <label>Room Type</label>
         <select v-model="selectedRoomType" class="room-dropdown">
-          <option value="bedroom">Bedroom</option>
-          <option value="living-room">Living Room</option>
-          <option value="kitchen">Kitchen</option>
-          <option value="dining-room">Dining Room</option>
+          <option value="">Select Room Type</option>
+          <template v-if="selectedSpaceType === 'residential'">
+            <option value="bedroom">Bedroom</option>
+            <option value="living-room">Living Room</option>
+            <option value="kitchen">Kitchen</option>
+            <option value="master-badroom">Master Bedroom</option>
+            <option value="dining-room">Dining Room</option>
+            <option value="childrens-bedroom">Children's Bedroom</option>
+            <option value="guest-bedroom">Guest Bedroom</option>
+            <option value="bathroom-toilet">Bathroom / Toilet</option>
+            <option value="balcony-sit-out">Balcony / Sit-out</option>
+            <option value="home-office-study-room">Home Office / Study Room</option>
+          </template>
+          <template v-else>
+            <option value="open-plan-office">Open Plan Office</option>
+            <option value="executive-office">Executive Office</option>
+            <option value="conference-room">Conference Room</option>
+            <option value="reception-lobby">Reception / Lobby</option>
+            <option value="co-working-space">Co-working Space</option>
+            <option value="retail-apparel">Retail – Apparel</option>
+            <option value="supermarket">Supermarket</option>
+            <option value="showroom">Showroom</option>
+            <option value="fine-dining-restaurant">Fine Dining Restaurant</option>
+            <option value="cafe-coffee-shop">Cafe / Coffee Shop</option>
+            <option value="bar-lounge">Bar / Lounge</option>
+            <option value="hotel-lobby">Hotel Lobby</option>
+            <option value="hotel-guest-room">Hotel Guest Room</option>
+            <option value="clinic-medical-office">Clinic / Medical Office</option>
+            <option value="salon-spa">Salon / Spa</option>
+            <option value="gym-fitness-center">Gym / Fitness Center</option>
+            <option value="bank-branch">Bank Branch</option>
+            <option value="classroom-lecture-hall">Classroom / Lecture Hall</option>
+          </template>
         </select>
       </div>
 
-      <!-- Kitchen Style Selection (only for kitchen) -->
-      <div v-if="selectedRoomType === 'kitchen'" class="kitchen-styles">
-        <label>Kitchen Style</label>
-        <select v-model="selectedKitchenStyle" class="room-dropdown">
-          <option value="">Select Kitchen Style</option>
-          <option v-for="(style, key) in kitchenStyles" :key="key" :value="key">
-            {{ style.name }}
-          </option>
-        </select>
-      </div>
-
-      <div v-if="selectedRoomType === 'living-room'" class="kitchen-styles">
-        <label>Living Room Style</label>
-        <select v-model="selectedLivingRoomStyle" class="room-dropdown">
-          <option value="">Select Living Room Style</option>
-          <option v-for="(style, key) in livingRoomStyles" :key="key" :value="key">
-            {{ style.name }}
-          </option>
-        </select>
-      </div>
-
-      <div v-if="selectedRoomType === 'bedroom'" class="kitchen-styles">
-        <label>Bedroom Style</label>
-        <select v-model="selectedBedroomStyle" class="room-dropdown">
-          <option value="">Select Bedroom Style</option>
-          <option v-for="(style, key) in bedroomStyles" :key="key" :value="key">
-            {{ style.name }}
-          </option>
-        </select>
-      </div>
-
-      <div v-if="selectedRoomType === 'dining-room'" class="kitchen-styles">
-        <label>Dining Room Style</label>
-        <select v-model="selectedDiningRoomStyle" class="room-dropdown">
-          <option value="">Select Dining Room Style</option>
-          <option v-for="(style, key) in diningRoomStyles" :key="key" :value="key">
-            {{ style.name }}
-          </option>
-        </select>
-      </div>
-
-      <!-- Room Style Grid (for non-kitchen rooms) -->
-      <!-- <div v-else class="room-styles">
-        <label>Room Style</label>
-        <div class="styles-grid">
-          <div 
-            v-for="style in roomStyles" 
-            :key="style.id"
-            class="style-item"
-            :class="{ active: selectedStyle === style.id }"
-            @click="selectedStyle = style.id"
-          >
-            <img :src="style.image" :alt="style.name" />
-            <span>{{ style.name }}</span>
-            <div v-if="selectedStyle === style.id" class="check-icon">✓</div>
-          </div>
+      <!-- Style Dropdowns for Residential -->
+      <div v-if="selectedSpaceType === 'residential' && selectedRoomType">
+        <div v-if="selectedRoomType === 'kitchen'" class="kitchen-styles">
+          <label>Kitchen Style</label>
+          <select v-model="selectedKitchenStyle" class="room-dropdown">
+            <option value="">Select Kitchen Style</option>
+            <option v-for="(style, key) in kitchenStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
         </div>
-      </div> -->
+
+        <div v-if="selectedRoomType === 'living-room'" class="kitchen-styles">
+          <label>Living Room Style</label>
+          <select v-model="selectedLivingRoomStyle" class="room-dropdown">
+            <option value="">Select Living Room Style</option>
+            <option v-for="(style, key) in livingRoomStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'bedroom'" class="kitchen-styles">
+          <label>Bedroom Style</label>
+          <select v-model="selectedBedroomStyle" class="room-dropdown">
+            <option value="">Select Bedroom Style</option>
+            <option v-for="(style, key) in bedroomStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'dining-room'" class="kitchen-styles">
+          <label>Dining Room Style</label>
+          <select v-model="selectedDiningRoomStyle" class="room-dropdown">
+            <option value="">Select Dining Room Style</option>
+            <option v-for="(style, key) in diningRoomStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'master-badroom'" class="kitchen-styles">
+          <label>Master Bedroom Style</label>
+          <select v-model="selectedMasterBedroomStyle" class="room-dropdown">
+            <option value="">Select Master Bedroom Style</option>
+            <option v-for="(style, key) in masterBedroomStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'childrens-bedroom'" class="kitchen-styles">
+          <label>Children's Bedroom Style</label>
+          <select v-model="selectedChildrensBedroomStyle" class="room-dropdown">
+            <option value="">Select Children's Bedroom Style</option>
+            <option v-for="(style, key) in childrensBedroomStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'guest-bedroom'" class="kitchen-styles">
+          <label>Guest Bedroom Style</label>
+          <select v-model="selectedGuestBedroomStyle" class="room-dropdown">
+            <option value="">Select Guest Bedroom Style</option>
+            <option v-for="(style, key) in guestBedroomStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'bathroom-toilet'" class="kitchen-styles">
+          <label>Bathroom Style</label>
+          <select v-model="selectedBathroomStyle" class="room-dropdown">
+            <option value="">Select Bathroom Style</option>
+            <option v-for="(style, key) in bathroomStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'balcony-sit-out'" class="kitchen-styles">
+          <label>Balcony Style</label>
+          <select v-model="selectedBalconyStyle" class="room-dropdown">
+            <option value="">Select Balcony Style</option>
+            <option v-for="(style, key) in balconyStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'home-office-study-room'" class="kitchen-styles">
+          <label>Home Office Style</label>
+          <select v-model="selectedHomeOfficeStyle" class="room-dropdown">
+            <option value="">Select Home Office Style</option>
+            <option v-for="(style, key) in homeOfficeStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Style Dropdowns for Commercial -->
+      <div v-if="selectedSpaceType === 'commercial' && selectedRoomType">
+        <div v-if="selectedRoomType === 'open-plan-office'" class="kitchen-styles">
+          <label>Open Plan Office Style</label>
+          <select v-model="selectedOpenPlanOfficeStyle" class="room-dropdown">
+            <option value="">Select Open Plan Office Style</option>
+            <option v-for="(style, key) in openPlanOfficeStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'executive-office'" class="kitchen-styles">
+          <label>Executive Office Style</label>
+          <select v-model="selectedExecutiveOfficeStyle" class="room-dropdown">
+            <option value="">Select Executive Office Style</option>
+            <option v-for="(style, key) in executiveOfficeStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'conference-room'" class="kitchen-styles">
+          <label>Conference Room Style</label>
+          <select v-model="selectedConferenceRoomStyle" class="room-dropdown">
+            <option value="">Select Conference Room Style</option>
+            <option v-for="(style, key) in conferenceRoomStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'reception-lobby'" class="kitchen-styles">
+          <label>Reception Lobby Style</label>
+          <select v-model="selectedReceptionLobbyStyle" class="room-dropdown">
+            <option value="">Select Reception Lobby Style</option>
+            <option v-for="(style, key) in receptionLobbyStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'co-working-space'" class="kitchen-styles">
+          <label>Co-working Space Style</label>
+          <select v-model="selectedCoWorkingSpaceStyle" class="room-dropdown">
+            <option value="">Select Co-working Space Style</option>
+            <option v-for="(style, key) in coWorkingSpaceStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'retail-apparel'" class="kitchen-styles">
+          <label>Retail Apparel Style</label>
+          <select v-model="selectedRetailApparelStyle" class="room-dropdown">
+            <option value="">Select Retail Apparel Style</option>
+            <option v-for="(style, key) in retailApparelStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'supermarket'" class="kitchen-styles">
+          <label>Supermarket Style</label>
+          <select v-model="selectedSupermarketStyle" class="room-dropdown">
+            <option value="">Select Supermarket Style</option>
+            <option v-for="(style, key) in supermarketStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'showroom'" class="kitchen-styles">
+          <label>Showroom Style</label>
+          <select v-model="selectedShowroomStyle" class="room-dropdown">
+            <option value="">Select Showroom Style</option>
+            <option v-for="(style, key) in showroomStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'fine-dining-restaurant'" class="kitchen-styles">
+          <label>Fine Dining Restaurant Style</label>
+          <select v-model="selectedFineDiningRestaurantStyle" class="room-dropdown">
+            <option value="">Select Fine Dining Restaurant Style</option>
+            <option v-for="(style, key) in fineDiningRestaurantStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'cafe-coffee-shop'" class="kitchen-styles">
+          <label>Cafe Coffee Shop Style</label>
+          <select v-model="selectedCafeCoffeeShopStyle" class="room-dropdown">
+            <option value="">Select Cafe Coffee Shop Style</option>
+            <option v-for="(style, key) in cafeCoffeeShopStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'bar-lounge'" class="kitchen-styles">
+          <label>Bar Lounge Style</label>
+          <select v-model="selectedBarLoungeStyle" class="room-dropdown">
+            <option value="">Select Bar Lounge Style</option>
+            <option v-for="(style, key) in barLoungeStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'hotel-lobby'" class="kitchen-styles">
+          <label>Hotel Lobby Style</label>
+          <select v-model="selectedHotelLobbyStyle" class="room-dropdown">
+            <option value="">Select Hotel Lobby Style</option>
+            <option v-for="(style, key) in hotelLobbyStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'hotel-guest-room'" class="kitchen-styles">
+          <label>Hotel Guest Room Style</label>
+          <select v-model="selectedHotelGuestRoomStyle" class="room-dropdown">
+            <option value="">Select Hotel Guest Room Style</option>
+            <option v-for="(style, key) in hotelGuestRoomStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'clinic-medical-office'" class="kitchen-styles">
+          <label>Clinic Medical Office Style</label>
+          <select v-model="selectedClinicMedicalOfficeStyle" class="room-dropdown">
+            <option value="">Select Clinic Medical Office Style</option>
+            <option v-for="(style, key) in clinicMedicalOfficeStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'salon-spa'" class="kitchen-styles">
+          <label>Salon Spa Style</label>
+          <select v-model="selectedSalonSpaStyle" class="room-dropdown">
+            <option value="">Select Salon Spa Style</option>
+            <option v-for="(style, key) in salonSpaStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'gym-fitness-center'" class="kitchen-styles">
+          <label>Gym Fitness Center Style</label>
+          <select v-model="selectedGymFitnessCenterStyle" class="room-dropdown">
+            <option value="">Select Gym Fitness Center Style</option>
+            <option v-for="(style, key) in gymFitnessCenterStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'bank-branch'" class="kitchen-styles">
+          <label>Bank Branch Style</label>
+          <select v-model="selectedBankBranchStyle" class="room-dropdown">
+            <option value="">Select Bank Branch Style</option>
+            <option v-for="(style, key) in bankBranchStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+
+        <div v-if="selectedRoomType === 'classroom-lecture-hall'" class="kitchen-styles">
+          <label>Classroom Style</label>
+          <select v-model="selectedClassroomLectureHallStyle" class="room-dropdown">
+            <option value="">Select Classroom Style</option>
+            <option v-for="(style, key) in classroomLectureHallStyles" :key="key" :value="key">
+              {{ style.name }}
+            </option>
+          </select>
+        </div>
+      </div>
 
       <!-- Generate Button -->
-      <button class="generate-btn" @click="generateDesign" :disabled="!uploadedImage || isGenerating">
+      <button class="generate-btn" @click="generateDesign" :disabled="!uploadedImage || !selectedSpaceType || !selectedRoomType || isGenerating">
         <span v-if="isGenerating">Generating...</span>
         <span v-else>Generate →</span>  
       </button>
@@ -159,16 +424,139 @@ export default {
     diningRoomStyles: {
       type: Object,
       default: () => ({})
+    },
+    masterBedroomStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    childrensBedroomStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    guestBedroomStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    bathroomStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    balconyStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    homeOfficeStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    // Commercial space styles
+    openPlanOfficeStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    executiveOfficeStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    conferenceRoomStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    receptionLobbyStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    coWorkingSpaceStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    retailApparelStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    supermarketStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    showroomStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    fineDiningRestaurantStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    cafeCoffeeShopStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    barLoungeStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    hotelLobbyStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    hotelGuestRoomStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    clinicMedicalOfficeStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    salonSpaStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    gymFitnessCenterStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    bankBranchStyles: {
+      type: Object,
+      default: () => ({})
+    },
+    classroomLectureHallStyles: {
+      type: Object,
+      default: () => ({})
     }
   },
   data() {
     return {
-      selectedRoomType: 'kitchen',
+      selectedSpaceType: 'residential',
+      selectedRoomType: '',
       selectedStyle: 1,
       selectedKitchenStyle: '',
       selectedLivingRoomStyle: '',
       selectedBedroomStyle: '',
       selectedDiningRoomStyle: '',
+      selectedMasterBedroomStyle: '',
+      selectedChildrensBedroomStyle: '',
+      selectedGuestBedroomStyle: '',
+      selectedBathroomStyle: '',
+      selectedBalconyStyle: '',
+      selectedHomeOfficeStyle: '',
+      // Commercial space selections
+      selectedOpenPlanOfficeStyle: '',
+      selectedExecutiveOfficeStyle: '',
+      selectedConferenceRoomStyle: '',
+      selectedReceptionLobbyStyle: '',
+      selectedCoWorkingSpaceStyle: '',
+      selectedRetailApparelStyle: '',
+      selectedSupermarketStyle: '',
+      selectedShowroomStyle: '',
+      selectedFineDiningRestaurantStyle: '',
+      selectedCafeCoffeeShopStyle: '',
+      selectedBarLoungeStyle: '',
+      selectedHotelLobbyStyle: '',
+      selectedHotelGuestRoomStyle: '',
+      selectedClinicMedicalOfficeStyle: '',
+      selectedSalonSpaStyle: '',
+      selectedGymFitnessCenterStyle: '',
+      selectedBankBranchStyle: '',
+      selectedClassroomLectureHallStyle: '',
       uploadedImage: null,
       generatedImage: null,
       showFullscreen: false,
@@ -225,28 +613,81 @@ export default {
       if (!this.uploadedImage) return;
       
       this.isGenerating = true;
-      let selectedStyleName, kitchenStyle;
+      let selectedStyleName = 'Modern';
       
-      if (this.selectedRoomType === 'kitchen' && this.selectedKitchenStyle) {
-        selectedStyleName = this.kitchenStyles[this.selectedKitchenStyle]?.name || 'Modern';
-        kitchenStyle = this.selectedKitchenStyle;
-      } else {
-        selectedStyleName = this.roomStyles.find(s => s.id === this.selectedStyle)?.name || 'Modern';
+      // Get style name based on room type and selected style
+      if (this.selectedSpaceType === 'residential') {
+        if (this.selectedRoomType === 'kitchen' && this.selectedKitchenStyle) {
+          selectedStyleName = this.kitchenStyles[this.selectedKitchenStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'living-room' && this.selectedLivingRoomStyle) {
+          selectedStyleName = this.livingRoomStyles[this.selectedLivingRoomStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'bedroom' && this.selectedBedroomStyle) {
+          selectedStyleName = this.bedroomStyles[this.selectedBedroomStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'dining-room' && this.selectedDiningRoomStyle) {
+          selectedStyleName = this.diningRoomStyles[this.selectedDiningRoomStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'master-badroom' && this.selectedMasterBedroomStyle) {
+          selectedStyleName = this.masterBedroomStyles[this.selectedMasterBedroomStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'childrens-bedroom' && this.selectedChildrensBedroomStyle) {
+          selectedStyleName = this.childrensBedroomStyles[this.selectedChildrensBedroomStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'guest-bedroom' && this.selectedGuestBedroomStyle) {
+          selectedStyleName = this.guestBedroomStyles[this.selectedGuestBedroomStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'bathroom-toilet' && this.selectedBathroomStyle) {
+          selectedStyleName = this.bathroomStyles[this.selectedBathroomStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'balcony-sit-out' && this.selectedBalconyStyle) {
+          selectedStyleName = this.balconyStyles[this.selectedBalconyStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'home-office-study-room' && this.selectedHomeOfficeStyle) {
+          selectedStyleName = this.homeOfficeStyles[this.selectedHomeOfficeStyle]?.name || 'Modern';
+        }
+      } else if (this.selectedSpaceType === 'commercial') {
+        if (this.selectedRoomType === 'open-plan-office' && this.selectedOpenPlanOfficeStyle) {
+          selectedStyleName = this.openPlanOfficeStyles[this.selectedOpenPlanOfficeStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'executive-office' && this.selectedExecutiveOfficeStyle) {
+          selectedStyleName = this.executiveOfficeStyles[this.selectedExecutiveOfficeStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'conference-room' && this.selectedConferenceRoomStyle) {
+          selectedStyleName = this.conferenceRoomStyles[this.selectedConferenceRoomStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'reception-lobby' && this.selectedReceptionLobbyStyle) {
+          selectedStyleName = this.receptionLobbyStyles[this.selectedReceptionLobbyStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'co-working-space' && this.selectedCoWorkingSpaceStyle) {
+          selectedStyleName = this.coWorkingSpaceStyles[this.selectedCoWorkingSpaceStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'retail-apparel' && this.selectedRetailApparelStyle) {
+          selectedStyleName = this.retailApparelStyles[this.selectedRetailApparelStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'supermarket' && this.selectedSupermarketStyle) {
+          selectedStyleName = this.supermarketStyles[this.selectedSupermarketStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'showroom' && this.selectedShowroomStyle) {
+          selectedStyleName = this.showroomStyles[this.selectedShowroomStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'fine-dining-restaurant' && this.selectedFineDiningRestaurantStyle) {
+          selectedStyleName = this.fineDiningRestaurantStyles[this.selectedFineDiningRestaurantStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'cafe-coffee-shop' && this.selectedCafeCoffeeShopStyle) {
+          selectedStyleName = this.cafeCoffeeShopStyles[this.selectedCafeCoffeeShopStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'bar-lounge' && this.selectedBarLoungeStyle) {
+          selectedStyleName = this.barLoungeStyles[this.selectedBarLoungeStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'hotel-lobby' && this.selectedHotelLobbyStyle) {
+          selectedStyleName = this.hotelLobbyStyles[this.selectedHotelLobbyStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'hotel-guest-room' && this.selectedHotelGuestRoomStyle) {
+          selectedStyleName = this.hotelGuestRoomStyles[this.selectedHotelGuestRoomStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'clinic-medical-office' && this.selectedClinicMedicalOfficeStyle) {
+          selectedStyleName = this.clinicMedicalOfficeStyles[this.selectedClinicMedicalOfficeStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'salon-spa' && this.selectedSalonSpaStyle) {
+          selectedStyleName = this.salonSpaStyles[this.selectedSalonSpaStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'gym-fitness-center' && this.selectedGymFitnessCenterStyle) {
+          selectedStyleName = this.gymFitnessCenterStyles[this.selectedGymFitnessCenterStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'bank-branch' && this.selectedBankBranchStyle) {
+          selectedStyleName = this.bankBranchStyles[this.selectedBankBranchStyle]?.name || 'Modern';
+        } else if (this.selectedRoomType === 'classroom-lecture-hall' && this.selectedClassroomLectureHallStyle) {
+          selectedStyleName = this.classroomLectureHallStyles[this.selectedClassroomLectureHallStyle]?.name || 'Modern';
+        }
       }
       
       try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 120000); // 2 minutes
+        const timeoutId = setTimeout(() => controller.abort(), 120000);
         
         const requestBody = {
           image: this.uploadedImage,
           roomType: this.selectedRoomType,
-          roomStyle: selectedStyleName
+          spaceType: this.selectedSpaceType,
+          style: selectedStyleName
         };
-        
-        if (kitchenStyle) {
-          requestBody.kitchenStyle = kitchenStyle;
-        }
         
         const response = await fetch('/api/generate-design', {
           method: 'POST',
@@ -265,12 +706,10 @@ export default {
         if (data.success) {
           this.generatedImage = data.image_url;
         } else {
-          // Fallback: Use a mock generated image for demo
           this.generatedImage = '/images/small/img-' + Math.floor(Math.random() * 9 + 1) + '.jpg';
           console.warn('API failed, using fallback image:', data.error);
         }
       } catch (error) {
-        // Fallback for network errors
         this.generatedImage = '/images/small/img-' + Math.floor(Math.random() * 9 + 1) + '.jpg';
         console.warn('Network error, using fallback image:', error.message);
       } finally {
@@ -414,60 +853,6 @@ export default {
   font-weight: 500;
 }
 
-.room-styles label {
-  display: block;
-  margin-bottom: 12px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.styles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-bottom: 30px;
-}
-
-.style-item {
-  position: relative;
-  cursor: pointer;
-  text-align: center;
-}
-
-.style-item img {
-  width: 100%;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 2px solid transparent;
-}
-
-.style-item.active img {
-  border-color: #7c3aed;
-}
-
-.style-item span {
-  display: block;
-  font-size: 11px;
-  margin-top: 4px;
-  color: #8b8d97;
-}
-
-.check-icon {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  background: #7c3aed;
-  color: white;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-}
-
 .generate-btn {
   width: 100%;
   padding: 12px;
@@ -484,7 +869,6 @@ export default {
   flex: 1;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   padding: 20px;
   overflow: auto;
 }
@@ -594,50 +978,6 @@ export default {
   cursor: not-allowed;
 }
 
-.play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255,255,255,0.9);
-  border: none;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.top-controls {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
-}
-
-.discount-btn, .share-btn, .download-btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.discount-btn {
-  background: linear-gradient(135deg, #84cc16, #65a30d);
-  color: white;
-}
-
-.share-btn, .download-btn {
-  background: #374151;
-  color: white;
-}
-
 .fullscreen-modal {
   position: fixed;
   top: 0;
@@ -665,30 +1005,6 @@ export default {
   align-items: center;
   padding: 10px 0;
   margin-bottom: 10px;
-}
-
-.image-counter {
-  color: white;
-  font-size: 14px;
-}
-
-.modal-controls {
-  display: flex;
-  gap: 10px;
-}
-
-.modal-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.modal-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
 }
 
 .close-modal {

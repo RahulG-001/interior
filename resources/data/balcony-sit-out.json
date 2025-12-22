@@ -1,0 +1,137 @@
+{
+  "balcony_sit_out": {
+    "room_name": "Balcony / Sit-out",
+    "designs": [
+      {
+        "style_id": "urban_garden",
+        "name": "Urban Garden Balcony",
+        "description": "Green and refreshing sit-out space with a city garden feel",
+        "flooring": "Wooden deck tiles or outdoor anti-skid tiles",
+        "walls": "Vertical garden wall or green panels",
+        "ceiling": "Open sky or pergola with creepers",
+        "lighting": "Warm string lights, garden lanterns",
+        "furniture": "Outdoor chairs, coffee table, planter stands",
+        "decor": "Potted plants, hanging planters, fairy lights",
+        "color_palette": ["#2E7D32", "#A5D6A7", "#795548", "#FFFFFF", "#C8E6C9"],
+        "prompt_keywords": "urban garden balcony, green sit out, city balcony makeover"
+      },
+      {
+        "style_id": "cozy_cafe",
+        "name": "Cozy Café Style Balcony",
+        "description": "Relaxed café-inspired sit-out for morning coffee and evening chats",
+        "flooring": "Patterned outdoor tiles",
+        "walls": "Warm neutral walls with art frames",
+        "ceiling": "Open ceiling with fabric canopy",
+        "lighting": "Pendant lights, warm bulbs",
+        "furniture": "Bistro table, café chairs",
+        "decor": "Wall quotes, planters, cushions",
+        "color_palette": ["#F1E4C3", "#C8B6A6", "#A98467", "#6C584C", "#FFFFFF"],
+        "prompt_keywords": "cafe style balcony, cozy sit out, coffee balcony design"
+      },
+      {
+        "style_id": "minimal_modern",
+        "name": "Minimal Modern Balcony",
+        "description": "Clean and contemporary balcony with simple aesthetics",
+        "flooring": "Grey outdoor tiles",
+        "walls": "Plain white or grey walls",
+        "ceiling": "Flat slab ceiling",
+        "lighting": "Recessed wall lights",
+        "furniture": "Minimal lounge chairs, side table",
+        "decor": "Single plant, subtle wall art",
+        "color_palette": ["#FFFFFF", "#E0E0E0", "#9E9E9E", "#616161", "#000000"],
+        "prompt_keywords": "modern balcony design, minimalist sit out, clean outdoor space"
+      },
+      {
+        "style_id": "boho_relaxed",
+        "name": "Boho Relaxed Balcony",
+        "description": "Casual, artistic balcony with bohemian charm",
+        "flooring": "Wooden deck flooring",
+        "walls": "Textured walls with macrame hangings",
+        "ceiling": "Open ceiling with fabric drapes",
+        "lighting": "Lantern lights, fairy strings",
+        "furniture": "Low seating, poufs, swing chair",
+        "decor": "Macrame, cushions, woven baskets",
+        "color_palette": ["#EDE0D4", "#DDB892", "#B08968", "#7F5539", "#FFFFFF"],
+        "prompt_keywords": "boho balcony, relaxed sit out, artistic outdoor space"
+      },
+      {
+        "style_id": "coastal_breeze",
+        "name": "Coastal Breeze Balcony",
+        "description": "Fresh and airy balcony inspired by coastal living",
+        "flooring": "Whitewashed outdoor tiles",
+        "walls": "White and light blue walls",
+        "ceiling": "Light ceiling with simple beams",
+        "lighting": "Soft ambient lighting",
+        "furniture": "Wooden chairs, small table",
+        "decor": "Coastal decor, lanterns, plants",
+        "color_palette": ["#FFFFFF", "#BEE9E8", "#62B6CB", "#CAE9FF", "#1B4965"],
+        "prompt_keywords": "coastal balcony, beach sit out, airy outdoor design"
+      },
+      {
+        "style_id": "zen_meditation",
+        "name": "Zen Meditation Balcony",
+        "description": "Peaceful sit-out designed for relaxation and meditation",
+        "flooring": "Natural stone or wooden deck",
+        "walls": "Neutral textured walls",
+        "ceiling": "Open sky or bamboo pergola",
+        "lighting": "Soft warm lights",
+        "furniture": "Floor seating, meditation bench",
+        "decor": "Bamboo plants, stone bowls",
+        "color_palette": ["#F5F1EE", "#D6CFC4", "#A89B8B", "#7A6F65", "#FFFFFF"],
+        "prompt_keywords": "zen balcony, meditation sit out, calm outdoor space"
+      },
+      {
+        "style_id": "luxury_lounge",
+        "name": "Luxury Lounge Balcony",
+        "description": "Premium balcony lounge with elegant seating and lighting",
+        "flooring": "Wood deck or premium outdoor tiles",
+        "walls": "Textured walls with accent lighting",
+        "ceiling": "False ceiling or pergola",
+        "lighting": "LED strip lights, wall washers",
+        "furniture": "Outdoor sofa, coffee table",
+        "decor": "Designer planters, cushions",
+        "color_palette": ["#2F3E46", "#354F52", "#52796F", "#CAD2C5", "#FFFFFF"],
+        "prompt_keywords": "luxury balcony lounge, premium sit out design"
+      },
+      {
+        "style_id": "family_friendly",
+        "name": "Family-Friendly Balcony",
+        "description": "Safe and functional sit-out space for family use",
+        "flooring": "Anti-skid outdoor tiles",
+        "walls": "Bright neutral walls",
+        "ceiling": "Covered ceiling",
+        "lighting": "Bright ceiling lights",
+        "furniture": "Bench seating, storage units",
+        "decor": "Plants, functional accessories",
+        "color_palette": ["#FFFFFF", "#F1F1F1", "#CFCFCF", "#A8A8A8", "#000000"],
+        "prompt_keywords": "family balcony, functional sit out, safe outdoor design"
+      },
+      {
+        "style_id": "tropical_retreat",
+        "name": "Tropical Retreat Balcony",
+        "description": "Lush tropical balcony resembling a resort escape",
+        "flooring": "Wood deck tiles",
+        "walls": "Green wall panels",
+        "ceiling": "Open pergola with greenery",
+        "lighting": "Warm ambient lights",
+        "furniture": "Rattan chairs, swing",
+        "decor": "Tropical plants, lanterns",
+        "color_palette": ["#2ECC71", "#27AE60", "#F39C12", "#8E44AD", "#FFFFFF"],
+        "prompt_keywords": "tropical balcony, resort style sit out, lush greenery"
+      },
+      {
+        "style_id": "compact_utilitarian",
+        "name": "Compact Utilitarian Balcony",
+        "description": "Space-efficient balcony design with practical usage",
+        "flooring": "Anti-skid ceramic tiles",
+        "walls": "Light neutral walls",
+        "ceiling": "Flat ceiling",
+        "lighting": "Bright LED lights",
+        "furniture": "Foldable chairs, wall-mounted table",
+        "decor": "Minimal planters",
+        "color_palette": ["#FFFFFF", "#EEEEEE", "#CCCCCC", "#999999", "#000000"],
+        "prompt_keywords": "small balcony design, compact sit out, space saving balcony"
+      }
+    ]
+  }
+}

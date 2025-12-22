@@ -1,0 +1,137 @@
+{
+  "childrens_bedroom": {
+    "room_name": "Children’s Bedroom",
+    "designs": [
+      {
+        "style_id": "playful_modern",
+        "name": "Playful Modern Children’s Bedroom",
+        "description": "Bright, cheerful space designed for fun, learning, and comfort",
+        "flooring": "Soft laminate wood with colorful play mats",
+        "walls": "Pastel painted walls with playful murals",
+        "ceiling": "Flat ceiling with star LED lights",
+        "lighting": "Soft ceiling lights, night lamp",
+        "furniture": "Single bed with storage, study desk, toy cabinet, bookshelf",
+        "decor": "Wall stickers, educational posters, soft toys, colorful rug",
+        "color_palette": ["#FFD166", "#EF476F", "#06D6A0", "#118AB2", "#FFFFFF"],
+        "prompt_keywords": "playful kids bedroom, colorful modern children room, fun interiors"
+      },
+      {
+        "style_id": "theme_space",
+        "name": "Space Theme Children’s Bedroom",
+        "description": "Imaginative space-themed bedroom encouraging curiosity and creativity",
+        "flooring": "Dark laminate flooring with soft rugs",
+        "walls": "Galaxy wallpaper with glow-in-the-dark stars",
+        "ceiling": "Dark ceiling with constellation lights",
+        "lighting": "LED strip lights, night projector",
+        "furniture": "Rocket-shaped bed, study table, storage drawers",
+        "decor": "Planet models, astronaut art, moon lamp",
+        "color_palette": ["#0B132B", "#1C2541", "#3A86FF", "#FFD166", "#FFFFFF"],
+        "prompt_keywords": "space theme kids bedroom, galaxy children room, creative design"
+      },
+      {
+        "style_id": "princess_fairytale",
+        "name": "Princess Fairytale Bedroom",
+        "description": "Magical fairytale-inspired bedroom for imaginative play",
+        "flooring": "Soft carpet flooring",
+        "walls": "Soft pink walls with castle illustrations",
+        "ceiling": "White ceiling with chandelier-style light",
+        "lighting": "Warm fairy lights, bedside lamp",
+        "furniture": "Canopy bed, vanity table, wardrobe",
+        "decor": "Fairy lights, crown decor, plush cushions",
+        "color_palette": ["#FADADD", "#F4C2C2", "#FFF1C1", "#E6BE8A", "#FFFFFF"],
+        "prompt_keywords": "princess kids bedroom, fairytale room design, magical interiors"
+      },
+      {
+        "style_id": "adventure_jungle",
+        "name": "Jungle Adventure Bedroom",
+        "description": "Nature-inspired adventurous bedroom full of energy",
+        "flooring": "Wooden flooring with animal-print rugs",
+        "walls": "Jungle-themed wallpaper with animals",
+        "ceiling": "Flat ceiling with leaf-pattern lighting",
+        "lighting": "Warm ceiling lights, reading lamp",
+        "furniture": "Low bed, open shelves, study desk",
+        "decor": "Animal figurines, leafy plants, adventure posters",
+        "color_palette": ["#2E7D32", "#66BB6A", "#A5D6A7", "#795548", "#FFFFFF"],
+        "prompt_keywords": "jungle kids bedroom, adventure children room, nature theme"
+      },
+      {
+        "style_id": "minimal_learning",
+        "name": "Minimal Learning Bedroom",
+        "description": "Clean and organized bedroom focused on study and calmness",
+        "flooring": "Light wooden flooring",
+        "walls": "Neutral off-white walls with learning boards",
+        "ceiling": "Simple flat ceiling",
+        "lighting": "Bright study lights, soft ambient lighting",
+        "furniture": "Single bed, ergonomic study desk, bookshelf",
+        "decor": "Wall calendar, pin board, small plants",
+        "color_palette": ["#F5F5F5", "#E0E0E0", "#90CAF9", "#AED581", "#FFFFFF"],
+        "prompt_keywords": "minimal kids bedroom, study focused children room, clean design"
+      },
+      {
+        "style_id": "sports_theme",
+        "name": "Sports Theme Children’s Bedroom",
+        "description": "Energetic sports-inspired bedroom for active kids",
+        "flooring": "Vinyl sports flooring or laminate",
+        "walls": "Accent wall with sports graphics",
+        "ceiling": "Flat ceiling with panel lights",
+        "lighting": "Bright LED ceiling lights",
+        "furniture": "Single bed, sports locker storage, desk",
+        "decor": "Sports posters, trophies shelf, wall decals",
+        "color_palette": ["#E63946", "#1D3557", "#457B9D", "#F1FAEE", "#FFFFFF"],
+        "prompt_keywords": "sports kids bedroom, active children room, energetic design"
+      },
+      {
+        "style_id": "creative_art",
+        "name": "Creative Art Bedroom",
+        "description": "Art-focused bedroom encouraging creativity and expression",
+        "flooring": "Easy-clean laminate flooring",
+        "walls": "Chalkboard and whiteboard paint walls",
+        "ceiling": "Flat ceiling with adjustable lights",
+        "lighting": "Directional lights for art activities",
+        "furniture": "Single bed, art desk, storage drawers",
+        "decor": "Art supplies, framed drawings, craft shelves",
+        "color_palette": ["#FFB703", "#FB8500", "#219EBC", "#8ECAE6", "#FFFFFF"],
+        "prompt_keywords": "art kids bedroom, creative children room, drawing space"
+      },
+      {
+        "style_id": "nature_calm",
+        "name": "Nature Calm Children’s Bedroom",
+        "description": "Soothing nature-inspired bedroom promoting relaxation",
+        "flooring": "Natural wood flooring",
+        "walls": "Soft green walls with nature prints",
+        "ceiling": "White ceiling with warm lights",
+        "lighting": "Soft LED lighting",
+        "furniture": "Wooden bed, reading nook, storage unit",
+        "decor": "Nature artwork, plants, soft textiles",
+        "color_palette": ["#A8DADC", "#B7E4C7", "#F1FAEE", "#6A994E", "#FFFFFF"],
+        "prompt_keywords": "nature kids bedroom, calm children room, soothing interiors"
+      },
+      {
+        "style_id": "tech_gamer",
+        "name": "Tech Gamer Kids Bedroom",
+        "description": "Modern tech-inspired bedroom for gaming and learning",
+        "flooring": "Dark laminate flooring",
+        "walls": "Grey walls with LED accents",
+        "ceiling": "Flat ceiling with RGB lights",
+        "lighting": "RGB LED strips, task lighting",
+        "furniture": "Single bed, gaming desk, ergonomic chair",
+        "decor": "LED wall art, gaming posters",
+        "color_palette": ["#1F2933", "#3B82F6", "#22D3EE", "#E5E7EB", "#000000"],
+        "prompt_keywords": "gaming kids bedroom, tech children room, modern LED design"
+      },
+      {
+        "style_id": "storybook_whimsical",
+        "name": "Storybook Whimsical Bedroom",
+        "description": "Dreamy storybook-inspired bedroom for imaginative minds",
+        "flooring": "Soft carpet flooring",
+        "walls": "Illustrated storybook murals",
+        "ceiling": "Light pastel ceiling",
+        "lighting": "Fairy lights, warm lamps",
+        "furniture": "Single bed, reading bench, bookshelf",
+        "decor": "Story characters, cushions, hanging stars",
+        "color_palette": ["#FFE5EC", "#FFC2D1", "#CDB4DB", "#BDE0FE", "#FFFFFF"],
+        "prompt_keywords": "storybook kids bedroom, whimsical children room, dreamy design"
+      }
+    ]
+  }
+}
